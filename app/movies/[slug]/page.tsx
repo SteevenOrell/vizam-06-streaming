@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { TitleDetailStub } from "@/components/title/title-detail-stub";
+import { TitleDetails } from "@/components/title/title-details";
 import { getTitleBySlug, getTitles } from "@/lib/content/catalog";
 
 export const dynamicParams = false;
@@ -24,5 +24,5 @@ export default async function MovieDetailsPage({ params }: PageProps<"/movies/[s
   const { slug } = await params;
   const title = getTitleBySlug(slug);
   if (!title || title.type !== "movie") notFound();
-  return <TitleDetailStub title={title} />;
+  return <TitleDetails title={title} />;
 }
