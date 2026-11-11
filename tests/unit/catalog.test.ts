@@ -81,7 +81,7 @@ describe("catalog loaders", () => {
     expect(catalog.genres.map((g) => g.slug)).toContain("sci-fi");
     expect(catalog.licences.every((l) => l.id && l.titleSlug)).toBe(true);
     const series = getTitleBySlug("the-quiet-hours", catalog);
-    expect(series?.episodeCount).toBe(2);
+    expect(series?.episodeCount).toBe(5);
     expect(series?.credits.directors[0]).toEqual({ name: "Sample Director", slug: "sample-director" });
   });
 

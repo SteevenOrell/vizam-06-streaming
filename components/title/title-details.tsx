@@ -110,7 +110,7 @@ export function TitleDetails({ title }: { title: Title }) {
         </div>
       </section>
 
-      <div className="grid gap-14 pb-16 pt-6 sm:gap-16">
+      <div className="grid grid-cols-1 gap-14 pb-16 pt-6 sm:gap-16">
         {isSeries && seasons.length ? <EpisodeBrowser slug={title.slug} fallbackImage={title.images.backdrop} seasons={seasons} /> : null}
 
         <div className="wrap grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-14">

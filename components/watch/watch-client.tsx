@@ -53,7 +53,7 @@ export function WatchClient({ data }: { data: WatchData }) {
           key={sel.resumeKey}
           video={video}
           label={label}
-          poster={episode?.still ?? video.poster ?? data.backdrop}
+          poster={episode?.still ?? data.backdrop}
           resumeKey={sel.resumeKey}
           detailsHref={data.detailsHref}
           sourceUrl={data.sourceUrl}

@@ -65,7 +65,7 @@ test("home rails render and the series rail matches the catalog", async ({ page 
   for (const name of [/Trending/, /Recently added/, /Popular genres/, /Editor's picks/, /Blender Open Movies/]) {
     await expect(page.getByRole("region", { name }).first()).toBeVisible();
   }
-  await expect(page.getByRole("link", { name: /^Animation/ }).first()).toHaveAttribute("href", "/genres#animation");
+  await expect(page.getByRole("link", { name: /^Animation/ }).first()).toHaveAttribute("href", "/genres/animation");
 });
 
 test.describe("movies", () => {

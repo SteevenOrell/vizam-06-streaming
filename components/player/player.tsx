@@ -127,6 +127,16 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
     };
   }, [resumeKey, duration]);
 
+  // A new source (fallback encoding, data saver, retry) resets the element. With preload="none" nothing loads until
+  // play() is called again, so restore the position and resume playback here.
+  useEffect(() => {
+    const v = videoRef.current;
+    const pending = afterLoad.current;
+    if (!v || !pending || !startedRef.current || !src) return;
+    if (pending.time > 0) v.currentTime = pending.time;
+    if (pending.play) void v.play().catch(() => setWaiting(false));
+  }, [src]);
+
   // Captions: exactly one text track "showing" (or none).
   useEffect(() => {
     const v = videoRef.current;
@@ -303,8 +313,10 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
     afterLoad.current = { time: v.currentTime, play: true };
     setFailed(false);
     setWaiting(true);
-    if (attempt === 0) v.load();
-    else setAttempt(0);
+    if (attempt === 0) {
+      v.load();
+      void v.play().catch(() => setWaiting(false));
+    } else setAttempt(0);
   }, [attempt]);
 
   const run = useCallback(
@@ -408,7 +420,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
       onFocus={poke}
       data-testid="player"
       data-state={failed ? "error" : ended ? "ended" : playing ? "playing" : started ? "paused" : "idle"}
-      className={`relative aspect-video w-full overflow-hidden rounded-player bg-black shadow-lift outline-none [&:fullscreen]:aspect-auto [&:fullscreen]:rounded-none ${hideCursor ? "cursor-none" : ""}`}
+      className={`relative aspect-video w-full overflow-hidden rounded-player bg-black shadow-lift outline-none! [&:fullscreen]:aspect-auto [&:fullscreen]:rounded-none ${hideCursor ? "cursor-none" : ""}`}
     >
       <video
         ref={videoRef}
@@ -443,6 +455,10 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
         onPlaying={() => setWaiting(false)}
         onCanPlay={() => setWaiting(false)}
         onWaiting={() => setWaiting(true)}
+        onEmptied={() => {
+          playingRef.current = false;
+          setPlaying(false);
+        }}
         onSeeking={() => startedRef.current && setWaiting(true)}
         onSeeked={() => setWaiting(false)}
         onLoadedMetadata={onLoadedMetadata}

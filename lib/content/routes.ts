@@ -9,5 +9,5 @@ export const routes = {
     if (opts.season !== undefined && opts.episode !== undefined) return `/watch/${t.slug}?s=${opts.season}&e=${opts.episode}`;
     return `/watch/${t.slug}`;
   },
-  genre: (slug: string) => `/genres#${slug}`,
+  genre: (slug: string) => `/genres/${slug}`,
 };

@@ -41,6 +41,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Optional separate build folder so parallel agents never share .next (e.g. NEXT_DIST_DIR=.next-p3).
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
