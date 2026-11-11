@@ -146,7 +146,7 @@ export function CardGrid({ cards, label }: { cards: CardData[]; label: string })
     <ul aria-label={label} className="wrap grid grid-cols-2 gap-x-4 gap-y-8 py-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
       {cards.map((c) => (
         <li key={c.slug}>
-          <TitleCard title={c} />
+          <TitleCard title={c} morph />
         </li>
       ))}
     </ul>

@@ -2,6 +2,7 @@
 
 import { Children, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { scrollToEased } from "@/lib/scroll";
 import { SectionHeader } from "./section-header";
 
 type Props = {
@@ -51,12 +52,17 @@ export function Rail({ id, title, eyebrow, seeAllHref, variant = "poster", child
     const el = trackRef.current;
     if (!el) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: reduced ? "auto" : "smooth" });
+    // Land on a card edge: aim at the first card that starts past (or before) 85% of a page.
+    const kids = Array.from(el.children) as HTMLElement[];
+    const goal = el.scrollLeft + dir * el.clientWidth * 0.85;
+    const base = kids[0]?.offsetLeft ?? 0;
+    const snapped = kids.map((k) => k.offsetLeft - base).reduce((best, x) => (Math.abs(x - goal) < Math.abs(best - goal) ? x : best), 0);
+    scrollToEased(el, snapped, reduced);
   };
 
   const headingId = `${id}-title`;
   const navButton =
-    "grid h-10 w-10 place-items-center rounded-full bg-white/8 text-bone-50 ring-1 ring-inset ring-white/10 transition-colors hover:bg-white/16 disabled:opacity-30 disabled:hover:bg-white/8";
+    "grid h-10 w-10 place-items-center rounded-full bg-white/8 text-bone-50 ring-1 ring-inset ring-white/10 transition-[background-color,opacity] duration-[var(--dur-base)] hover:bg-white/16 disabled:pointer-events-none disabled:opacity-0";
 
   return (
     <section aria-labelledby={headingId} className="py-6">

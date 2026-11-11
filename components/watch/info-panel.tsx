@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import type { Title } from "@/lib/content/types";
@@ -17,7 +17,7 @@ export function InfoPanel({ title }: { title: Title }) {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(60%_80%_at_20%_0%,rgb(242_163_58/0.18),transparent_70%)]" />
       <div className="relative grid gap-6 sm:grid-cols-[6.5rem_1fr] lg:grid-cols-[8rem_minmax(0,1.5fr)_minmax(0,1fr)] lg:gap-10">
         <div className="relative hidden aspect-[2/3] w-full overflow-hidden rounded-card shadow-lift ring-1 ring-white/10 sm:block">
-          <Image src={title.images.poster} alt={`${title.title} poster`} fill sizes="8rem" className="object-cover" />
+          <FadeImage src={title.images.poster} alt={`${title.title} poster`} fill sizes="8rem" className="object-cover" />
         </div>
         <div className="min-w-0">
           <h2 id="watch-info-heading" className="display text-4xl text-bone-50 sm:text-5xl">

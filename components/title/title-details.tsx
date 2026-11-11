@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
+import { ViewTransition } from "react";
 import Link from "next/link";
 import { Clapperboard, Play, ShieldCheck } from "lucide-react";
 import { Credits } from "./credits";
@@ -43,15 +44,17 @@ export function TitleDetails({ title }: { title: Title }) {
         <div aria-hidden="true" className="absolute inset-0">
           {/* Fade/scale-in on navigation (CSS only; instant under prefers-reduced-motion). */}
           <div className="backdrop-in absolute inset-0">
-            <Image src={title.images.backdrop} alt="" fill priority sizes="100vw" placeholder={title.images.backdropBlur ? "blur" : "empty"} blurDataURL={title.images.backdropBlur} className="object-cover" />
+            <FadeImage src={title.images.backdrop} alt="" fill priority sizes="100vw" blur={title.images.backdropBlur} className="object-cover" />
           </div>
           <div className="absolute inset-0 bg-[image:var(--scrim-hero-side)]" />
           <div className="absolute inset-0 bg-[image:var(--scrim-hero-bottom)]" />
         </div>
         <div className="wrap relative grid gap-8 pb-12 pt-44 sm:pt-56 md:grid-cols-[minmax(0,14rem)_1fr] md:items-end lg:pt-64">
-          <div className="relative hidden aspect-[2/3] overflow-hidden rounded-card shadow-lift ring-1 ring-white/10 md:block">
-            <Image src={title.images.poster} alt={`${title.title} poster`} fill sizes="14rem" placeholder={title.images.posterBlur ? "blur" : "empty"} blurDataURL={title.images.posterBlur} className="object-cover" />
-          </div>
+          <ViewTransition name={`poster-${title.slug}`} share="morph" default="none">
+            <div className="relative hidden aspect-[2/3] overflow-hidden rounded-card shadow-lift ring-1 ring-white/10 md:block">
+              <FadeImage src={title.images.poster} alt={`${title.title} poster`} fill priority sizes="14rem" blur={title.images.posterBlur} className="object-cover" />
+            </div>
+          </ViewTransition>
           <div className="min-w-0">
             <div className="flex flex-wrap items-center gap-2">
               <Badge tone="outline">{isSeries ? "Series" : "Movie"}</Badge>

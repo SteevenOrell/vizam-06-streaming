@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { HeroCarousel, type HeroSlide } from "@/components/home/hero-carousel";
 import { Rail } from "@/components/ui/rail";
@@ -79,14 +79,13 @@ export default function HomePage() {
                   href={routes.genre(genre.slug)}
                   className="group/tile relative block aspect-[16/10] overflow-hidden rounded-card bg-ink-850 ring-1 ring-inset ring-white/8 outline-offset-4"
                 >
-                  <Image
+                  <FadeImage
                     src={front.images.backdrop}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 46vw"
-                    placeholder={front.images.backdropBlur ? "blur" : "empty"}
-                    blurDataURL={front.images.backdropBlur}
-                    className="object-cover opacity-70 transition-[transform,opacity] duration-500 ease-cinema group-hover/tile:scale-105 group-hover/tile:opacity-90"
+                    blur={front.images.backdropBlur}
+                    className="object-cover opacity-70 m-zoom group-hover/tile:scale-105 group-hover/tile:opacity-90"
                   />
                   <span aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-card)]" />
                   <span className="absolute inset-x-3 bottom-3">

@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import type { Title } from "@/lib/content/types";
+import { publicModifications } from "@/lib/format";
 
 const ext = { target: "_blank", rel: "noopener noreferrer" } as const;
 const linkCls = "inline-flex items-center gap-1 font-semibold text-ember-300 underline decoration-ember-300/40 underline-offset-4 hover:text-ember-200";
@@ -32,10 +33,10 @@ export function LicencePanel({ title }: { title: Title }) {
           <dt className="text-xs font-bold uppercase tracking-[0.16em] text-bone-400">Attribution</dt>
           <dd className="mt-1 leading-relaxed text-bone-200">{l.attribution}</dd>
         </div>
-        {l.modifications ? (
+        {publicModifications(l.modifications) ? (
           <div className="sm:col-span-2">
             <dt className="text-xs font-bold uppercase tracking-[0.16em] text-bone-400">Changes made</dt>
-            <dd className="mt-1 leading-relaxed text-bone-400">{l.modifications}</dd>
+            <dd className="mt-1 leading-relaxed text-bone-400">{publicModifications(l.modifications)}</dd>
           </div>
         ) : null}
         <div className="sm:col-span-2">

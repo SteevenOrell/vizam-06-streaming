@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ArrowLeft, SkipForward } from "lucide-react";
@@ -69,7 +69,7 @@ export function WatchClient({ data }: { data: WatchData }) {
         />
       ) : (
         <div className="relative grid aspect-video place-items-center overflow-hidden rounded-player bg-ink-900 shadow-lift" data-testid="no-video">
-          <Image src={data.backdrop} alt="" fill sizes="(min-width: 1536px) 92rem, 100vw" className="object-cover opacity-30" />
+          <FadeImage src={data.backdrop} alt="" fill sizes="(min-width: 1536px) 92rem, 100vw" className="object-cover opacity-30" />
           <div className="relative p-6 text-center">
             <p className="text-lg font-extrabold text-bone-50">
               {sel.kind === "missing" ? "That video is not available." : "No playable source for this title yet."}

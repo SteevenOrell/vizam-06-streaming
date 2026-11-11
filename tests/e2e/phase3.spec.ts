@@ -117,20 +117,20 @@ test.describe("watch page and player", () => {
     await expect.poll(() => videoEl(page.getByTestId("player")).evaluate((v: HTMLVideoElement) => v.volume)).toBeCloseTo(0.9, 1);
   });
 
-  test("captions: menu and C key set exactly one text track showing", async ({ page }) => {
+  test("captions: menu and C key load exactly one text track (drawn in our own overlay)", async ({ page }) => {
     const { player, video } = await startPlayer(page);
     const modes = () => video.evaluate((v: HTMLVideoElement) => Array.from(v.textTracks).map((t) => t.mode));
     expect(await modes()).toEqual(["disabled"]); // off by default
     await reveal(page, player);
     await page.getByTestId("cc").click();
     await page.getByRole("button", { name: "English" }).click();
-    expect(await modes()).toEqual(["showing"]);
+    expect(await modes()).toEqual(["hidden"]);
     await page.getByRole("button", { name: "Off" }).click();
     expect(await modes()).toEqual(["disabled"]);
     await page.keyboard.press("Escape");
     await player.focus();
     await page.keyboard.press("c");
-    expect(await modes()).toEqual(["showing"]);
+    expect(await modes()).toEqual(["hidden"]);
   });
 
   test("fullscreen button and F key call requestFullscreen", async ({ page }) => {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { PageIntro } from "@/components/layout/page-intro";
 import { getByGenre, getGenres, getTrending } from "@/lib/content/catalog";
@@ -44,14 +44,13 @@ export default function GenresPage() {
               className="group/tile relative block aspect-[16/9] overflow-hidden rounded-panel bg-ink-850 ring-1 ring-inset ring-white/8 outline-offset-4"
             >
               {front ? (
-                <Image
+                <FadeImage
                   src={front.images.backdrop}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
-                  placeholder={front.images.backdropBlur ? "blur" : "empty"}
-                  blurDataURL={front.images.backdropBlur}
-                  className="object-cover opacity-75 transition-[transform,opacity] duration-500 ease-cinema group-hover/tile:scale-105 group-hover/tile:opacity-95"
+                  blur={front.images.backdropBlur}
+                  className="object-cover opacity-75 m-zoom group-hover/tile:scale-105 group-hover/tile:opacity-95"
                 />
               ) : null}
               <span aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-card)]" />

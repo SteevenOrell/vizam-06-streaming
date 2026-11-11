@@ -1,7 +1,7 @@
 "use client";
 
 import { useId, useRef, useState, type KeyboardEvent } from "react";
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { Play } from "lucide-react";
 import { routes } from "@/lib/content/routes";
@@ -99,7 +99,7 @@ export function EpisodeBrowser({ slug, fallbackImage, seasons, current, onPick, 
                 className={`group relative flex gap-4 rounded-card p-2.5 transition-colors sm:p-3 ${isCurrent ? "bg-ember-900/60 ring-1 ring-ember-400/50" : "bg-ink-850 hover:bg-ink-800"}`}
               >
                 <div className="relative aspect-video w-32 shrink-0 overflow-hidden rounded-sm bg-ink-800 sm:w-52">
-                  <Image src={ep.still ?? fallbackImage} alt="" fill sizes="(min-width: 640px) 13rem, 8rem" className="object-cover" />
+                  <FadeImage src={ep.still ?? fallbackImage} alt="" fill sizes="(min-width: 640px) 13rem, 8rem" className="object-cover" />
                   {ep.playable ? (
                     <span aria-hidden="true" className="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition-[opacity,background-color] group-hover:bg-black/40 group-hover:opacity-100 group-focus-within:opacity-100">
                       <Play className="h-8 w-8 text-bone-50" fill="currentColor" />

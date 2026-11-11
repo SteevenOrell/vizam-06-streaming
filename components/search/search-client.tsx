@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -154,7 +154,7 @@ export function SearchClient({ entries, genres, trending }: Props) {
               <ul aria-label="More results" className="mt-4 grid grid-cols-2 gap-x-4 gap-y-8 pb-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
                 {rest.map((r) => (
                   <li key={r.card.slug}>
-                    <TitleCard title={r.card} />
+                    <TitleCard title={r.card} morph />
                   </li>
                 ))}
               </ul>
@@ -177,10 +177,13 @@ function TopResult({ entry }: { entry: SearchEntry }) {
     .filter(Boolean)
     .join(" · ");
   return (
-    <section aria-labelledby="top-result" data-testid="top-result" className="relative overflow-hidden rounded-panel bg-ink-900 ring-1 ring-inset ring-white/8">
-      <Image src={c.backdrop} alt="" fill sizes="(min-width: 1280px) 1200px, 100vw" placeholder={c.backdropBlur ? "blur" : "empty"} blurDataURL={c.backdropBlur} className="object-cover opacity-45" />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/80 to-ink-950/20" />
-      <div className="relative max-w-xl p-6 sm:p-10">
+    <section aria-labelledby="top-result" data-testid="top-result" className="relative flex flex-col overflow-hidden rounded-panel bg-ink-900 ring-1 ring-inset ring-white/8">
+      {/* Phone: the backdrop is a bright 16:9 banner above the text. From sm: it sits behind the text, dimmed on the left only. */}
+      <div aria-hidden="true" className="relative aspect-[16/9] w-full sm:absolute sm:inset-0 sm:aspect-auto">
+        <FadeImage src={c.backdrop} alt="" fill sizes="(min-width: 1280px) 1200px, 100vw" blur={c.backdropBlur} className="object-cover sm:opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/10 to-transparent sm:bg-gradient-to-r sm:from-ink-950 sm:via-ink-950/75 sm:to-transparent" />
+      </div>
+      <div className="relative -mt-6 max-w-xl p-6 pt-0 sm:mt-0 sm:p-10">
         <p id="top-result" className="eyebrow">
           Top result
         </p>

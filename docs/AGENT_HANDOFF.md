@@ -1,6 +1,6 @@
 # Agent handoff: AFTERLIGHT (vizam-06-streaming)
 
-_Last updated: 2026-11-11 by the Phase 3 agent_
+_Last updated: 2026-11-11 by the Phase 5 agent_
 
 ## Objective
 Build AFTERLIGHT, a fictional premium streaming and film-discovery site (VIZAM portfolio concept) around Creative
@@ -87,7 +87,21 @@ placeholders.
 - Tests: unit 68 pass; tests/e2e/phase4.spec.ts. Screenshots: docs/screenshots/phase4/.
 - Run your own build with NEXT_DIST_DIR=.next-pN and E2E_PORT to avoid clashing with other agents.
 
+## Done (Phase 5: motion and polish)
+- Motion tokens in app/globals.css (:root --dur-fast/base/hover/slow/hero, --ease-cinema/swift; classes .m-lift .m-zoom .m-reveal). Tailwind 4 scale/translate are individual CSS properties, so the shared transitions list them.
+- Hero: .hero-live on the active slide (backdrop settle 1.04->1, .hero-rise stagger via --i); slide crossfade --dur-hero. Pure CSS.
+- Rail: eased scroll tween (lib/scroll.ts, snaps to card edges, snap disabled during tween), edge arrows fade out when disabled.
+- FadeImage (components/ui/fade-image.tsx): every next/image now goes through it; a veil with the blur placeholder fades out on load (.img-veil; hidden without JS).
+- TitleCard preview: 400 ms hover intent, video fades in after canplay, fades out on leave.
+- View transitions: React <ViewTransition name="poster-<slug>" share="morph"> on poster cards in grids only (TitleGrid, browse, search results, my list) and the details poster. Rails are excluded on purpose (a title can appear in two rails; duplicate names break the morph). No next.config change needed; pages stay SSG. Reduced motion disables the VT animations.
+- Captions: tracks stay "hidden"; cues drawn in our own overlay above the control bar (data-testid caption-overlay), height tracked with ResizeObserver.
+- publicModifications() in lib/format.ts strips repo paths from licence "Changes" text (details + About); media-library.json untouched.
+- Search top result: banner-style backdrop on phones. Trending: "10" uses a smaller, tighter numeral.
+- Real series: tests/e2e/series.real.spec.ts covers all 4 (details, stills load, play link, playback with mocked Wikimedia). All pass.
+- Screenshots: docs/screenshots/phase5/ (scripts/screenshots-phase5.mjs; adds a synthetic long cue because the mocked clip is shorter than the film).
+
 ## Pending
+0. Phase 6 (QA/security, Opus) and 7 (delivery). Open: Drama/"The General" backdrop and poster show a burned-in "W" watermark fragment at the lower right (media agent); Hubblecast/documentary genre tiles are very dark; tears-of-steel hero loop subtitles (item 4 below).
 1. Phase 4: see below. Series from the media agent are untested on real data (only the sample series); check `/tv/<slug>` and `/watch/<slug>?s=&e=` once they land.
 3. Phase 5-7 per PROJECT_PLAN.md. UI/UX review gate before any push.
 4. Hero loop fix for the media agent: tears-of-steel loop has burned-in subtitle text around 2.5-5 s; re-cut to the sunset/rooftop shots (loop time ~7-13 s) or another segment without subtitles.

@@ -10,3 +10,14 @@ export function formatRuntime(minutes?: number): string | undefined {
 export function plural(n: number, one: string, many = `${one}s`): string {
   return `${n} ${n === 1 ? one : many}`;
 }
+
+/** Licence "modifications" text for public pages: drops internal repo references such as "(see docs/CONTENT_LICENSES.md)". */
+export function publicModifications(text: string | undefined): string | undefined {
+  if (!text) return undefined;
+  const cleaned = text
+    .replace(/\s*\([^)]*\b(?:docs|content|public|scripts)\/[^)]*\)/gi, "")
+    .replace(/\s*\b(?:see\s+)?(?:docs|content|public|scripts)\/\S+/gi, "")
+    .replace(/\s+([,;.])/g, "$1")
+    .trim();
+  return cleaned || undefined;
+}

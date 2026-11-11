@@ -114,7 +114,7 @@ export function MyListView({ cards }: { cards: CardData[] }) {
           <ul aria-label="Saved titles" className="mt-4 grid grid-cols-2 gap-x-4 gap-y-8 py-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
             {shown.map((c) => (
               <li key={c.slug} className="flex flex-col gap-2">
-                <TitleCard title={c} />
+                <TitleCard title={c} morph />
                 <button
                   type="button"
                   onClick={() => onRemove(c)}

@@ -61,6 +61,7 @@ const ctl =
 export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl, autoStart = false, endActions }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
   const hideTimer = useRef<number | undefined>(undefined);
   const flashTimer = useRef<number | undefined>(undefined);
   const lastSave = useRef(0);
@@ -88,6 +89,8 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
   const [flash, setFlash] = useState("");
   const [resumeAt, setResumeAt] = useState<number | undefined>(undefined);
   const [dataSaver, setDataSaverState] = useState(false);
+  const [cues, setCues] = useState<string[]>([]);
+  const [ctlH, setCtlH] = useState(64);
   const [caption, setCaption] = useState(() => Math.max(-1, video.captions.findIndex((c) => c.default)));
 
   /** Candidates the browser can play, in the order they are tried. */
@@ -137,12 +140,32 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
     if (pending.play) void v.play().catch(() => setWaiting(false));
   }, [src]);
 
-  // Captions: exactly one text track "showing" (or none).
+  // Captions: exactly one text track is "hidden" (loaded and firing cues, but not drawn by the browser) or none.
+  // The cues are drawn in our own overlay (below) so they can lift above the control bar on every screen size.
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    for (let i = 0; i < v.textTracks.length; i++) v.textTracks[i].mode = i === caption ? "showing" : "disabled";
+    for (let i = 0; i < v.textTracks.length; i++) v.textTracks[i].mode = i === caption ? "hidden" : "disabled";
+    const track = caption >= 0 ? v.textTracks[caption] : undefined;
+    if (!track) {
+      setCues([]);
+      return;
+    }
+    const read = () => setCues(Array.from(track.activeCues ?? []).map((c) => (c as VTTCue).text.replace(/<[^>]+>/g, "").trim()).filter(Boolean));
+    read();
+    track.addEventListener("cuechange", read);
+    return () => track.removeEventListener("cuechange", read);
   }, [caption, video.captions]);
+
+  // Track the control bar height so captions can sit just above it while it is visible.
+  useEffect(() => {
+    const el = controlsRef.current;
+    if (!el) return;
+    const ro = new ResizeObserver(() => setCtlH(el.offsetHeight));
+    ro.observe(el);
+    setCtlH(el.offsetHeight);
+    return () => ro.disconnect();
+  }, [started, failed]);
 
   useEffect(() => {
     const onChange = () => {
@@ -492,6 +515,21 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
         ))}
       </video>
 
+      {cues.length > 0 && !failed ? (
+        <div
+          aria-hidden="true"
+          data-testid="caption-overlay"
+          style={{ bottom: showControls || ended ? ctlH + 24 : 16 }}
+          className="pointer-events-none absolute inset-x-0 flex flex-col items-center gap-1 px-4 text-center transition-[bottom] duration-[var(--dur-base)] ease-[var(--ease-cinema)] motion-reduce:transition-none"
+        >
+          {cues.map((t) => (
+            <p key={t} className="max-w-[min(90%,48rem)] whitespace-pre-line rounded bg-ink-950/80 px-2.5 py-1 text-[clamp(0.8125rem,2.4vw,1.25rem)] font-semibold leading-snug text-bone-50">
+              {t}
+            </p>
+          ))}
+        </div>
+      ) : null}
+
       {/* Idle: big play (and resume choice). Nothing plays until the visitor asks. */}
       {!started && !failed ? (
         <div className="absolute inset-0 grid place-items-center bg-gradient-to-t from-black/60 via-black/10 to-black/30">
@@ -596,6 +634,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
       {/* Floating control bar (ref 3). Hidden visually while playing, but still focusable: focusing reveals it. */}
       {started && !failed ? (
         <div
+          ref={controlsRef}
           className={`absolute inset-x-2 bottom-2 transition-opacity duration-300 motion-reduce:transition-none sm:inset-x-5 sm:bottom-5 ${showControls || ended ? "opacity-100" : "pointer-events-none opacity-0"}`}
           data-testid="controls"
         >

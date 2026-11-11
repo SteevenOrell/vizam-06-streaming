@@ -60,9 +60,12 @@
   color-scheme: dark;
   --header-h: 4rem;
   --gutter: clamp(1rem, 4vw, 4rem);
-  --dur-fast: 160ms;
-  --dur-base: 260ms;
-  --dur-slow: 480ms;
+  /* Motion tokens: one set of durations and easings shared by cards, tiles, veils and the hero. */
+  --dur-fast: 160ms; /* buttons, colour changes */
+  --dur-base: 260ms; /* reveals (icons, badges, scrims) */
+  --dur-hover: 340ms; /* card lift / zoom */
+  --dur-slow: 480ms; /* image veil, dots */
+  --dur-hero: 900ms; /* hero slide crossfade and rise-in */
 
   /* Gradient overlays for heroes and cards */
   --scrim-hero-bottom: linear-gradient(
@@ -187,17 +190,91 @@ body {
   }
 }
 
-/* Card/hero image fade-in over the blur placeholder (pure CSS, no hydration dependency) */
-@keyframes img-in {
+/* Image loading: a veil (blur placeholder) above the image fades out once it has loaded (see FadeImage) */
+.img-veil {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--color-ink-850) center / cover no-repeat;
+  opacity: 1;
+  transition:
+    opacity var(--dur-slow) var(--ease-cinema),
+    visibility 0s linear var(--dur-slow);
+}
+.img-veil[data-loaded="true"] {
+  opacity: 0;
+  visibility: hidden;
+}
+@media (scripting: none) {
+  .img-veil {
+    display: none;
+  }
+}
+
+/* Shared card/tile motion (TitleCard, RankedCard, genre tiles): one duration and easing for every hover/focus change */
+/* Tailwind 4 scale/translate utilities use the individual CSS properties, so list them (not just transform) */
+.m-lift {
+  transition: transform var(--dur-hover) var(--ease-cinema), scale var(--dur-hover) var(--ease-cinema);
+}
+.m-zoom {
+  transition:
+    transform calc(var(--dur-hover) * 1.5) var(--ease-cinema),
+    scale calc(var(--dur-hover) * 1.5) var(--ease-cinema),
+    opacity var(--dur-hover) var(--ease-swift);
+}
+.m-reveal {
+  transition:
+    opacity var(--dur-base) var(--ease-swift),
+    transform var(--dur-hover) var(--ease-cinema),
+    scale var(--dur-hover) var(--ease-cinema);
+}
+
+/* Hero: first-load and slide-change reveal. The active slide gets .hero-live; children rise in with a stagger (--i) */
+@keyframes hero-settle {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes hero-rise {
   from {
     opacity: 0;
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
+    transform: none;
   }
 }
-.card-img-in {
-  animation: img-in 420ms var(--ease-cinema, cubic-bezier(0.16, 1, 0.3, 1)) both;
+.hero-live .hero-bg {
+  animation: hero-settle 2200ms var(--ease-cinema) both;
+}
+.hero-live .hero-rise {
+  animation: hero-rise var(--dur-hero) var(--ease-cinema) both;
+  animation-delay: calc(140ms + var(--i, 0) * 90ms);
+}
+
+/* Poster -> details morph (React <ViewTransition>, poster grids only). Elsewhere the .backdrop-in fade is the fallback. */
+::view-transition-group(.morph) {
+  animation-duration: 420ms;
+  animation-timing-function: var(--ease-cinema);
+}
+::view-transition-image-pair(.morph) {
+  animation-name: via-blur;
+}
+@keyframes via-blur {
+  30% {
+    filter: blur(3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
 }
 
 /* Details header: backdrop eases in on navigation (shared-element feel without JS; instant when motion is reduced) */
@@ -213,14 +290,6 @@ body {
 }
 .backdrop-in {
   animation: backdrop-in 700ms var(--ease-cinema, cubic-bezier(0.16, 1, 0.3, 1)) both;
-}
-
-/* Captions drawn by the browser inside the player */
-video::cue {
-  background: rgb(11 10 9 / 0.78);
-  color: var(--color-bone-50);
-  font-family: var(--font-sans);
-  font-size: 1.1em;
 }
 
 /* Trending: outlined ranking numerals (original design; the number is decorative, the link name carries the rank) */

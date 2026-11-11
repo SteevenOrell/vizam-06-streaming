@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { FadeImage } from "@/components/ui/fade-image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Info, Pause, Play } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -104,19 +104,12 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             aria-label={`${i + 1} of ${count}`}
             aria-hidden={!isActive}
             inert={!isActive}
-            className={`absolute inset-0 transition-opacity duration-700 ease-cinema ${isActive ? "z-10 opacity-100" : "z-0 opacity-0"}`}
+            style={{ transitionDuration: "var(--dur-hero)" }}
+            className={`absolute inset-0 transition-opacity ease-cinema ${isActive ? "hero-live z-10 opacity-100" : "z-0 opacity-0"}`}
           >
-            <Image
-              src={s.backdrop}
-              alt=""
-              fill
-              priority={i === 0}
-              loading={i === 0 ? undefined : "lazy"}
-              sizes="100vw"
-              placeholder={s.backdropBlur ? "blur" : "empty"}
-              blurDataURL={s.backdropBlur}
-              className="object-cover"
-            />
+            <div className="hero-bg absolute inset-0">
+              <FadeImage src={s.backdrop} alt="" fill priority={i === 0} loading={i === 0 ? undefined : "lazy"} sizes="100vw" blur={s.backdropBlur} className="object-cover" />
+            </div>
             {isActive && s.loop && !failed[s.slug] && canAutoplay ? (
               <video
                 ref={videoRef}
@@ -141,7 +134,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             <div aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-hero-bottom)]" />
 
             <div className="wrap relative flex h-full flex-col justify-end pb-24 pt-32 sm:pb-28">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-bone-200">
+              <div className="hero-rise flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-bone-200" style={{ "--i": 0 } as React.CSSProperties}>
                 <Badge tone="outline">{s.type === "movie" ? "Film" : "Series"}</Badge>
                 <span>{s.year}</span>
                 {formatRuntime(s.runtimeMinutes) ? <span>{formatRuntime(s.runtimeMinutes)}</span> : null}
@@ -151,11 +144,11 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
                   </span>
                 ))}
               </div>
-              <h2 className="display mt-4 max-w-4xl text-[3.25rem] leading-[0.9] text-bone-50 sm:text-8xl lg:text-9xl">
+              <h2 style={{ "--i": 1 } as React.CSSProperties} className="hero-rise display mt-4 max-w-4xl text-[3.25rem] leading-[0.9] text-bone-50 sm:text-8xl lg:text-9xl">
                 {s.title}
               </h2>
-              <p className="mt-4 line-clamp-3 max-w-xl text-base leading-relaxed text-bone-200 sm:text-lg">{s.synopsis}</p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <p style={{ "--i": 2 } as React.CSSProperties} className="hero-rise mt-4 line-clamp-3 max-w-xl text-base leading-relaxed text-bone-200 sm:text-lg">{s.synopsis}</p>
+              <div style={{ "--i": 3 } as React.CSSProperties} className="hero-rise mt-7 flex flex-wrap gap-3">
                 <ButtonLink href={s.watchHref} size="lg" icon={<Play aria-hidden="true" fill="currentColor" />}>
                   Watch Preview
                   <span className="sr-only">: {s.title}</span>

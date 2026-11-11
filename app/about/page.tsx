@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageIntro } from "@/components/layout/page-intro";
 import { getLicences } from "@/lib/content/catalog";
+import { publicModifications } from "@/lib/format";
 import { site } from "@/lib/site";
 import { tmdbAttributionEnabled } from "@/lib/tmdb";
 
@@ -95,7 +96,7 @@ export default function AboutPage() {
                   <span className="sr-only"> of {l.titleName} (opens in a new tab)</span>
                 </a>
               </p>
-              <p className="mt-1 text-xs leading-relaxed text-bone-400">Changes: {l.modifications ?? "None"}</p>
+              <p className="mt-1 text-xs leading-relaxed text-bone-400">Changes: {publicModifications(l.modifications) ?? "None"}</p>
             </li>
           ))}
         </ul>
