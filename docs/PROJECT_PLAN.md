@@ -21,7 +21,7 @@ Approved decisions:
 - [x] 2. Home, Movies, TV Shows (Sonnet) (done 2026-11-11)
 - [ ] Checkpoint: homepage screenshots at 390 and 1440 px for Steeven
 - [x] 3. Movie details, TV show details, Watch / player (Sonnet)
-- [ ] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)
+- [x] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)
 - [ ] 5. Motion and polish (Sonnet)
 - [ ] 6. QA and security: Vitest, Playwright + axe, quality gate, content QA, audit, security review (Opus)
 - [ ] 7. Delivery: README, deployment instructions, portfolio screenshots, handoff, retro (Sonnet + main)

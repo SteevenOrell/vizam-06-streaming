@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { PageIntro, StubNotice } from "@/components/layout/page-intro";
+import { PageIntro } from "@/components/layout/page-intro";
+import { MyListView } from "@/components/my-list/my-list-view";
+import { getTitles, toCards } from "@/lib/content/catalog";
 
 export const metadata: Metadata = {
   title: "My List",
@@ -7,14 +9,13 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-/** Phase 4: client watchlist from localStorage (key "afterlight:my-list", array of slugs), no account needed. */
 export default function MyListPage() {
   return (
     <>
       <PageIntro eyebrow="Saved on this device" title="My List">
         Your list lives only in this browser. There is no account and nothing is sent anywhere.
       </PageIntro>
-      <StubNotice phase="Phase 4" />
+      <MyListView cards={toCards(getTitles())} />
     </>
   );
 }

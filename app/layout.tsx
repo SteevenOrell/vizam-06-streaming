@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Big_Shoulders, Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { SearchShortcut } from "@/components/layout/search-shortcut";
 import { SkipLink } from "@/components/layout/skip-link";
 import { Providers } from "./providers";
 import { site } from "@/lib/site";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <div id="root" className="flex min-h-dvh flex-col">
           <SkipLink />
           <Providers>
+            <SearchShortcut />
             <SiteHeader />
             <main id="main" tabIndex={-1} className="flex-1 focus:outline-none">
               {children}

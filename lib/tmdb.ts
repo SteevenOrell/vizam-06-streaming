@@ -125,3 +125,33 @@ export async function findTmdbMatch(
     data.results.find((r) => (r.title ?? r.name ?? "").trim().toLowerCase() === wanted) ?? null
   );
 }
+
+// ---------------------------------------------------------------------------------------------------------------
+// "From the wider world of film" feed (Trending page): titles, years and overviews only, no TMDB images.
+// ---------------------------------------------------------------------------------------------------------------
+
+export type WiderFilmItem = { id: number; title: string; year?: number; overview: string };
+
+const OVERVIEW_MAX = 220;
+
+function clip(text: string): string {
+  const t = text.replace(/\s+/g, " ").trim();
+  if (t.length <= OVERVIEW_MAX) return t;
+  return `${t.slice(0, OVERVIEW_MAX).replace(/\s+\S*$/, "")}…`;
+}
+
+/** Up to `limit` weekly-trending films from TMDB as plain text records. Empty array without a key or on any failure. */
+export async function getWiderFilmFeed(limit = 6): Promise<WiderFilmItem[]> {
+  const results = await getTmdbTrending("movie");
+  if (!results) return [];
+  const items: WiderFilmItem[] = [];
+  for (const r of results) {
+    const title = (r.title ?? r.name ?? "").trim();
+    const overview = clip(r.overview);
+    if (!title || !overview) continue;
+    const year = Number((r.release_date ?? r.first_air_date ?? "").slice(0, 4));
+    items.push({ id: r.id, title, year: Number.isInteger(year) && year > 1800 ? year : undefined, overview });
+    if (items.length >= limit) break;
+  }
+  return items;
+}

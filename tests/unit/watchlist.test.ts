@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { WATCHLIST_KEY, parseWatchlist, readWatchlist, toggleSlug, writeWatchlist } from "@/lib/watchlist";
+import { WATCHLIST_KEY, parseWatchlist, readWatchlist, insertSlug, toggleSlug, writeWatchlist } from "@/lib/watchlist";
 
 function memoryStorage(initial?: string) {
   const data = new Map<string, string>();
@@ -39,5 +39,14 @@ describe("watchlist store", () => {
     };
     expect(readWatchlist(broken)).toEqual([]);
     expect(() => writeWatchlist(broken, ["a"])).not.toThrow();
+  });
+});
+
+describe("insertSlug (undo position)", () => {
+  it("re-inserts at the original index, clamped, without duplicates", () => {
+    expect(insertSlug(["a", "c"], "b", 1)).toEqual(["a", "b", "c"]);
+    expect(insertSlug(["a"], "z", 99)).toEqual(["a", "z"]);
+    expect(insertSlug(["a"], "z", -3)).toEqual(["z", "a"]);
+    expect(insertSlug(["a", "b"], "a", 1)).toEqual(["a", "b"]);
   });
 });

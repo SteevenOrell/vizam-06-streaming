@@ -41,6 +41,14 @@ export function toggleSlug(list: string[], slug: string): string[] {
   return list.includes(slug) ? list.filter((s) => s !== slug) : [slug, ...list];
 }
 
+/** Pure insert at a position (used by undo); no-op if already present. */
+export function insertSlug(list: string[], slug: string, index: number): string[] {
+  if (list.includes(slug)) return list;
+  const next = [...list];
+  next.splice(Math.max(0, Math.min(index, next.length)), 0, slug);
+  return next;
+}
+
 // External store: SSR-safe, synced across tabs via the storage event and within the page via a listener set.
 
 const EMPTY: string[] = [];
@@ -89,5 +97,7 @@ export function useWatchlist() {
   const has = useCallback((slug: string) => list.includes(slug), [list]);
   const toggle = useCallback((slug: string) => setList(toggleSlug(getSnapshot(), slug)), []);
   const remove = useCallback((slug: string) => setList(getSnapshot().filter((s) => s !== slug)), []);
-  return { list, has, toggle, remove };
+  const restore = useCallback((slug: string, index: number) => setList(insertSlug(getSnapshot(), slug, index)), []);
+  const clear = useCallback(() => setList([]), []);
+  return { list, has, toggle, remove, restore, clear };
 }

@@ -77,9 +77,18 @@ placeholders.
 - localStorage: `afterlight:resume` (per title/episode), `afterlight:player` (volume, muted, dataSaver).
 - Tests: `tests/unit/player.test.ts`; e2e `tests/e2e/phase3.spec.ts` (Wikimedia mocked with a local clip via `helpers.ts`; `@network` test needs `E2E_NETWORK=1`) and `tv.sample.spec.ts` (project `sample`, port 3062, built from the sample catalog by `scripts/e2e-sample-server.mjs`; sample series now has 2 seasons + local video). `NEXT_DIST_DIR` (e.g. .next-p3) keeps a build out of the shared .next. Screenshots: `docs/screenshots/phase3/` (`scripts/screenshots-phase3.mjs`).
 
+## Done (Phase 4: Genres, Trending, Search, My List, About)
+- /genres: designed tiles (varied backdrops, counts), /genres/[slug] (SSG) with movies/series toggle + sort in URL (?type=, ?sort=). routes.genre is now /genres/<slug>; /genres#slug anchors still land on the tile.
+- /trending: editorial note, numbered Top 10 (components/trending/ranked-card.tsx, outlined numerals), Rising rail (recently added not in top 10), optional TMDB text-only rail (lib/tmdb.ts getWiderFilmFeed; hidden without key or on any failure).
+- /search: lib/content/search.ts (pure ranking, Zod query limit 80), components/search/search-client.tsx (debounced URL sync via history.replaceState, Top result, type filter, empty and no-results states); global "/" shortcut (components/layout/search-shortcut.tsx in layout, lib/search-focus.ts), Escape clears.
+- /my-list: components/my-list/my-list-view.tsx (skeleton until mounted, sort, remove + undo toast, clear all with confirm + undo); watchlist hook gained restore/clear.
+- /about: concept, how it is built, what we do not do, #licences from catalog (matches CONTENT_LICENSES.md, unit-tested), TMDB block only when key set. app/sitemap.ts, app/robots.ts added.
+- TMDB_API_KEY: MISSING in this environment, so the feed is covered by mocked-fetch unit tests only (tests/unit/tmdb.test.ts).
+- Tests: unit 68 pass; tests/e2e/phase4.spec.ts. Screenshots: docs/screenshots/phase4/.
+- Run your own build with NEXT_DIST_DIR=.next-pN and E2E_PORT to avoid clashing with other agents.
+
 ## Pending
 1. Phase 4: see below. Series from the media agent are untested on real data (only the sample series); check `/tv/<slug>` and `/watch/<slug>?s=&e=` once they land.
-2. Phase 4: Genres, Trending, Search, My List page, About; TMDB feed if key present. Pages still pass Title via toCard().
 3. Phase 5-7 per PROJECT_PLAN.md. UI/UX review gate before any push.
 4. Hero loop fix for the media agent: tears-of-steel loop has burned-in subtitle text around 2.5-5 s; re-cut to the sunset/rooftop shots (loop time ~7-13 s) or another segment without subtitles.
 

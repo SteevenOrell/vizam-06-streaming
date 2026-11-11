@@ -222,3 +222,10 @@ video::cue {
   font-family: var(--font-sans);
   font-size: 1.1em;
 }
+
+/* Trending: outlined ranking numerals (original design; the number is decorative, the link name carries the rank) */
+.rank-num {
+  color: transparent;
+  -webkit-text-stroke: 3px var(--color-ember-400);
+  paint-order: stroke fill;
+}
