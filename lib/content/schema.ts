@@ -236,6 +236,13 @@ export const EditorialSchema = z.object({
   hero: z.array(SlugSchema).default([]),
   /** Editorial "trending" order (AFTERLIGHT has no audience data; this is curated, and labelled as such). */
   trending: z.array(SlugSchema).default([]),
+  /**
+   * Editorial order in which titles joined the catalogue, newest first. AFTERLIGHT has no real release dates for its
+   * own additions, so this is an ordering, not a timestamp. Titles not listed follow, in catalogue order.
+   */
+  recentlyAdded: z.array(SlugSchema).default([]),
+  /** How many of the first `recentlyAdded` titles carry the "New" badge. */
+  newBadgeCount: z.number().int().min(0).max(24).default(4),
   collections: z.array(CollectionSchema).default([]),
   genreBlurbs: z.record(z.string(), z.string()).default({}),
 });

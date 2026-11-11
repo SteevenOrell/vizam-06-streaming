@@ -1,12 +1,39 @@
 {
-  "hero": ["ember-line", "the-quiet-hours", "saltglass"],
-  "trending": ["saltglass", "ember-line", "the-quiet-hours"],
+  "hero": ["sintel", "tears-of-steel", "elephants-dream"],
+  "trending": ["sintel", "tears-of-steel", "big-buck-bunny", "night-of-the-living-dead", "spring", "elephants-dream", "the-general", "cosmos-laundromat"],
+  "recentlyAdded": ["wing-it", "charge", "sprite-fright", "spring", "cosmos-laundromat", "his-girl-friday", "the-general", "night-of-the-living-dead"],
+  "newBadgeCount": 3,
   "collections": [
     {
-      "slug": "new-on-afterlight",
-      "eyebrow": "Just added",
-      "title": "New on AFTERLIGHT",
-      "titles": ["ember-line", "saltglass", "the-quiet-hours"],
+      "slug": "editors-picks",
+      "eyebrow": "Recommended",
+      "title": "Editor's picks",
+      "description": "Chosen by hand, not by an algorithm.",
+      "titles": ["tears-of-steel", "his-girl-friday", "spring", "night-of-the-living-dead", "cosmos-laundromat", "the-general"],
+      "layout": "landscape"
+    },
+    {
+      "slug": "blender-open-movies",
+      "eyebrow": "Collection",
+      "title": "Blender Open Movies",
+      "description": "Short films made in the open with Blender and released under Creative Commons.",
+      "titles": ["big-buck-bunny", "elephants-dream", "sintel", "tears-of-steel", "cosmos-laundromat", "spring", "sprite-fright", "charge", "wing-it"],
+      "layout": "poster"
+    },
+    {
+      "slug": "silver-screen-classics",
+      "eyebrow": "Collection",
+      "title": "Silver-screen classics",
+      "description": "Public-domain features from the studio and silent eras.",
+      "titles": ["the-general", "his-girl-friday", "night-of-the-living-dead"],
+      "layout": "poster"
+    },
+    {
+      "slug": "short-and-sweet",
+      "eyebrow": "Collection",
+      "title": "Short & sweet: under 15 minutes",
+      "description": "Finished before the kettle boils.",
+      "titles": ["charge", "wing-it", "spring", "sprite-fright", "big-buck-bunny", "elephants-dream", "tears-of-steel", "cosmos-laundromat"],
       "layout": "landscape"
     }
   ],

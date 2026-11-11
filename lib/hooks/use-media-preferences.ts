@@ -56,3 +56,15 @@ export function useCanAutoplayVideo(): boolean {
   const saveData = useSaveData();
   return !reduced && !saveData;
 }
+
+const FINE_POINTER = "(hover: hover) and (pointer: fine)";
+const subscribeFinePointer = subscribeMedia(FINE_POINTER);
+
+/** True on devices with a precise hover-capable pointer (mouse/trackpad). Server snapshot false. */
+export function useFinePointer(): boolean {
+  return useSyncExternalStore(
+    subscribeFinePointer,
+    () => window.matchMedia(FINE_POINTER).matches,
+    () => false,
+  );
+}

@@ -1,11 +1,18 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { getByGenre, getHeroTitles, getTitleBySlug, getTitles, getTrending, loadCatalog, related, search } from "@/lib/content/catalog";
+import { getNewSlugs, getRecentlyAdded, getByGenre, getHeroTitles, getTitleBySlug, getTitles, getTrending, loadCatalog, related, search } from "@/lib/content/catalog";
 import { MediaItemSchema, MediaLibrarySchema } from "@/lib/content/schema";
 
 const sample = JSON.parse(readFileSync(join(process.cwd(), "content/catalog.sample.json"), "utf8"));
-const editorial = JSON.parse(readFileSync(join(process.cwd(), "content/editorial.json"), "utf8"));
+const editorial = {
+  hero: ["ember-line", "the-quiet-hours", "saltglass", "missing-slug"],
+  trending: ["saltglass", "ember-line", "the-quiet-hours"],
+  recentlyAdded: ["the-quiet-hours", "missing-slug", "saltglass"],
+  newBadgeCount: 2,
+  collections: [{ slug: "new", title: "New", titles: ["ember-line", "saltglass", "missing-slug"], layout: "landscape" }],
+  genreBlurbs: {},
+};
 const catalog = loadCatalog({ source: "sample", generatedAt: "2026-11-11T00:00:00Z", items: sample, editorial });
 
 const validItem = sample.items[0];
@@ -85,6 +92,8 @@ describe("catalog loaders", () => {
     expect(getHeroTitles(1, catalog)[0].slug).toBe("ember-line");
     expect(search("QUIET", catalog)[0].slug).toBe("the-quiet-hours");
     expect(search("sample actor one", catalog)[0].slug).toBe("ember-line");
+    expect(getRecentlyAdded(3, catalog).map((t) => t.slug)).toEqual(["the-quiet-hours", "saltglass", "ember-line"]);
+    expect([...getNewSlugs(catalog)]).toEqual(["the-quiet-hours", "saltglass"]);
     expect(search("", catalog)).toEqual([]);
     expect(related("ember-line", 8, catalog).map((t) => t.slug)).toEqual(["the-quiet-hours"]);
   });

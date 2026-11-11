@@ -6,6 +6,7 @@ import rawCatalog from "@/content/catalog.json";
 import { CatalogFileSchema, type CatalogFile } from "./schema";
 import { normaliseCatalog, slugify, foldText } from "./normalise";
 import type { Catalog, Genre, Title, TitleType } from "./types";
+import { toCard, type CardData } from "./card";
 
 let cache: Catalog | null = null;
 
@@ -126,3 +127,24 @@ function allPeople(t: Title) {
 }
 
 export { slugify };
+
+/** Newest first by editorial order, then remaining titles in reverse catalogue order (later additions first). */
+export function getRecentlyAdded(limit = 12, catalog = getCatalog()): Title[] {
+  const listed = catalog.editorial.recentlyAdded
+    .map((slug) => catalog.titles.find((t) => t.slug === slug))
+    .filter((t): t is Title => Boolean(t));
+  const rest = catalog.titles.filter((t) => !listed.includes(t)).reverse();
+  return [...listed, ...rest].slice(0, limit);
+}
+
+/** Slugs that carry the "New" badge: the first `newBadgeCount` entries of the editorial recently-added order. */
+export function getNewSlugs(catalog = getCatalog()): Set<string> {
+  const known = new Set(catalog.titles.map((t) => t.slug));
+  return new Set(catalog.editorial.recentlyAdded.filter((s) => known.has(s)).slice(0, catalog.editorial.newBadgeCount));
+}
+
+/** Card payloads (with the editorial "New" flag) for client components. */
+export function toCards(titles: Title[], catalog = getCatalog()): CardData[] {
+  const fresh = getNewSlugs(catalog);
+  return titles.map((t) => toCard(t, fresh.has(t.slug)));
+}

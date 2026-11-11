@@ -1,4 +1,5 @@
 import type { Title } from "@/lib/content/types";
+import { toCards } from "@/lib/content/catalog";
 import { TitleCard } from "./title-card";
 
 /** Responsive equal-size poster grid for index pages. */
@@ -8,9 +9,9 @@ export function TitleGrid({ titles, label }: { titles: Title[]; label: string })
   }
   return (
     <ul aria-label={label} className="wrap grid grid-cols-2 gap-x-4 gap-y-8 py-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-      {titles.map((t) => (
-        <li key={t.slug}>
-          <TitleCard title={t} />
+      {toCards(titles).map((c) => (
+        <li key={c.slug}>
+          <TitleCard title={c} />
         </li>
       ))}
     </ul>

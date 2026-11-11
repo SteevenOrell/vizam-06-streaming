@@ -18,7 +18,7 @@ Approved decisions:
       nav, footer, 250 px lock, test tooling, `docs/ARCHITECTURE.md`, `docs/design-direction.md` (done 2026-11-11)
 - [ ] 1. Media library (Sonnet, runs in parallel with 0): curated titles, posters/stills, hero loops, licences,
       `content/media-library.json`
-- [ ] 2. Home, Movies, TV Shows (Sonnet)
+- [x] 2. Home, Movies, TV Shows (Sonnet) (done 2026-11-11)
 - [ ] Checkpoint: homepage screenshots at 390 and 1440 px for Steeven
 - [ ] 3. Movie details, TV show details, Watch / player (Sonnet)
 - [ ] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)

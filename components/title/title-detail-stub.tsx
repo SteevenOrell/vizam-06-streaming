@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { Rail } from "@/components/ui/rail";
 import { TitleCard } from "@/components/ui/title-card";
+import { toCard } from "@/lib/content/card";
 import { related } from "@/lib/content/catalog";
 import { routes } from "@/lib/content/routes";
 import type { Title } from "@/lib/content/types";
@@ -62,7 +63,7 @@ export function TitleDetailStub({ title }: { title: Title }) {
       {more.length ? (
         <Rail id="rail-related" eyebrow="More like this" title="You might also like">
           {more.map((t) => (
-            <TitleCard key={t.slug} title={t} />
+            <TitleCard key={t.slug} title={toCard(t)} />
           ))}
         </Rail>
       ) : null}

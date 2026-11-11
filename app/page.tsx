@@ -1,69 +1,120 @@
 import Image from "next/image";
-import { Info, Play } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { ButtonLink } from "@/components/ui/button";
+import Link from "next/link";
+import { HeroCarousel, type HeroSlide } from "@/components/home/hero-carousel";
 import { Rail } from "@/components/ui/rail";
+import { SectionHeader } from "@/components/ui/section-header";
 import { TitleCard } from "@/components/ui/title-card";
-import { getCollections, getHeroTitles, getTrending } from "@/lib/content/catalog";
+import {
+  getByGenre,
+  getCollections,
+  getGenres,
+  getHeroTitles,
+  getRecentlyAdded,
+  getTitles,
+  getTrending,
+  toCards,
+} from "@/lib/content/catalog";
 import { routes } from "@/lib/content/routes";
+import type { Title } from "@/lib/content/types";
+import { plural } from "@/lib/format";
 
-/** Home (Phase 0 skeleton): static hero from the first editorial pick + rails. Phase 2 adds the rotating hero/video. */
+function toSlide(t: Title): HeroSlide {
+  return {
+    slug: t.slug,
+    type: t.type,
+    title: t.title,
+    year: t.year,
+    runtimeMinutes: t.runtimeMinutes,
+    genres: t.genres.map((g) => g.name),
+    synopsis: t.synopsis,
+    backdrop: t.images.backdrop,
+    backdropBlur: t.images.backdropBlur,
+    detailsHref: routes.title(t),
+    watchHref: routes.watch(t),
+    loop: t.heroLoop ? { src: t.heroLoop.src.map((s) => ({ url: s.url, type: s.type })), poster: t.heroLoop.poster } : undefined,
+  };
+}
+
 export default function HomePage() {
-  const [hero] = getHeroTitles(1);
-  const trending = getTrending(12);
+  const slides = getHeroTitles(5).map(toSlide);
+  const trending = toCards(getTrending(12));
+  const recent = toCards(getRecentlyAdded(12));
+  const series = toCards(getTitles({ type: "series" }));
   const collections = getCollections();
+
+  // Genre tiles: most-used genres, each fronted by a different title's backdrop.
+  const used = new Set<string>();
+  const genreTiles = getGenres()
+    .slice(0, 6)
+    .map((g) => {
+      const titles = getByGenre(g.slug);
+      const front = titles.find((t) => !used.has(t.slug)) ?? titles[0];
+      used.add(front.slug);
+      return { genre: g, front };
+    });
 
   return (
     <>
-      {hero ? (
-        <section aria-labelledby="hero-title" className="relative -mt-[var(--header-h)] min-h-[min(88svh,52rem)]">
-          <Image
-            src={hero.images.backdrop}
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-hero-side)]" />
-          <div aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-hero-bottom)]" />
-          <div className="wrap relative flex min-h-[min(88svh,52rem)] flex-col justify-end pb-16 pt-32">
-            <div className="flex flex-wrap items-center gap-3 text-sm text-bone-200">
-              <Badge tone="outline">{hero.type === "movie" ? "Film" : "Series"}</Badge>
-              <span>{hero.year}</span>
-              {hero.genres.slice(0, 2).map((g) => (
-                <span key={g.slug}>{g.name}</span>
-              ))}
-            </div>
-            <h1 id="hero-title" className="display mt-4 max-w-3xl text-6xl text-bone-50 sm:text-8xl">
-              {hero.title}
-            </h1>
-            <p className="mt-4 line-clamp-3 max-w-xl text-base leading-relaxed text-bone-200 sm:text-lg">{hero.synopsis}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <ButtonLink href={routes.watch(hero)} size="lg" icon={<Play aria-hidden="true" fill="currentColor" />}>
-                Play
-              </ButtonLink>
-              <ButtonLink href={routes.title(hero)} size="lg" variant="secondary" icon={<Info aria-hidden="true" />}>
-                More info
-              </ButtonLink>
-            </div>
-          </div>
-        </section>
-      ) : null}
+      <HeroCarousel slides={slides} />
 
-      <Rail id="rail-trending" eyebrow="Trending" title="Curated trending picks" seeAllHref="/trending">
+      <Rail id="rail-trending" eyebrow="Trending" title="Trending (curated by our editors)" seeAllHref="/trending">
         {trending.map((t, i) => (
           <TitleCard key={t.slug} title={t} priority={i < 2} />
         ))}
       </Rail>
 
+      <Rail id="rail-recent" eyebrow="Just added" title="Recently added" variant="landscape">
+        {recent.map((t) => (
+          <TitleCard key={t.slug} title={t} variant="landscape" />
+        ))}
+      </Rail>
+
+      {genreTiles.length > 0 ? (
+        <section aria-labelledby="genres-title" className="py-6">
+          <SectionHeader id="genres-title" eyebrow="Browse" title="Popular genres" seeAllHref="/genres" />
+          <ul className="wrap mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+            {genreTiles.map(({ genre, front }) => (
+              <li key={genre.slug}>
+                <Link
+                  href={routes.genre(genre.slug)}
+                  className="group/tile relative block aspect-[16/10] overflow-hidden rounded-card bg-ink-850 ring-1 ring-inset ring-white/8 outline-offset-4"
+                >
+                  <Image
+                    src={front.images.backdrop}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 46vw"
+                    placeholder={front.images.backdropBlur ? "blur" : "empty"}
+                    blurDataURL={front.images.backdropBlur}
+                    className="object-cover opacity-70 transition-[transform,opacity] duration-500 ease-cinema group-hover/tile:scale-105 group-hover/tile:opacity-90"
+                  />
+                  <span aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-card)]" />
+                  <span className="absolute inset-x-3 bottom-3">
+                    <span className="display block text-3xl text-bone-50">{genre.name}</span>
+                    <span className="mt-1 block text-xs font-semibold text-bone-200">{plural(genre.count, "title")}</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {collections.map((c) => (
         <Rail key={c.slug} id={`rail-${c.slug}`} eyebrow={c.eyebrow} title={c.title} variant={c.layout}>
-          {c.titles.map((t) => (
-            <TitleCard key={t.slug} title={t} variant={c.layout} badge={c.slug === "new-on-afterlight" ? "New" : undefined} />
+          {toCards(c.titles).map((t) => (
+            <TitleCard key={t.slug} title={t} variant={c.layout} />
           ))}
         </Rail>
       ))}
+
+      {series.length > 0 ? (
+        <Rail id="rail-series" eyebrow="Episodic" title="Series" seeAllHref="/tv" variant="landscape">
+          {series.map((t) => (
+            <TitleCard key={t.slug} title={t} variant="landscape" />
+          ))}
+        </Rail>
+      ) : null}
     </>
   );
 }

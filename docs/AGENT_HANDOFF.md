@@ -1,6 +1,6 @@
 # Agent handoff: AFTERLIGHT (vizam-06-streaming)
 
-_Last updated: 2026-11-11 by the Phase 0 agent (Opus)_
+_Last updated: 2026-11-11 by the Phase 2 agent (Sonnet)_
 
 ## Objective
 Build AFTERLIGHT, a fictional premium streaming and film-discovery site (VIZAM portfolio concept) around Creative
@@ -61,13 +61,19 @@ placeholders.
 - `lib/hooks/use-media-preferences.ts` (reduced motion, Save-Data, `useCanAutoplayVideo`), `lib/motion.ts`.
 - `lib/tmdb.ts` server-only stub. Tests: `tests/unit/catalog.test.ts`, `tests/e2e/smoke.spec.ts`.
 
-## Pending (priority order)
-1. Phase 2 (Sonnet): Home (rotating hero with gated muted loop, pagination dots, rails per collection/genre), Movies,
-   TV Shows. Replace sample slugs in `content/editorial.json` with real ones once `media-library.json` lands.
-2. Checkpoint: Home screenshots at 390 and 1440 next to refs 1-2 for Steeven.
-3. Phase 3: details pages (seasons/episodes), Watch player (plan in ARCHITECTURE.md).
-4. Phase 4: Genres, Trending, Search, My List (localStorage), About; TMDB feed if key present.
-5. Phases 5-7 per PROJECT_PLAN.md.
+## Done (Phase 2: Home, Movies, TV)
+- Home: `components/home/hero-carousel.tsx` (poster first, gated muted loop via useCanAutoplayVideo + in-view + tab-visible + user pause, dots, prev/next, no auto-advance, My List button), rails: Trending (curated), Recently added, Popular genres tiles (-> /genres#slug), editorial collections, Series (hidden when none).
+- Movies/TV: `components/browse/browse-view.tsx` + pure `lib/content/browse.ts` (genre chips aria-pressed, decade, sort, count live region, URL params genre/decade/sort, empty states). TV shows designed empty state when no series.
+- TitleCard is now a client component taking `CardData` (`lib/content/card.ts`, `toCard/toCards`): hover/focus reveal, hover preview only with a `preview` video + fine pointer + motion allowed, "New" badge from editorial.json `recentlyAdded` + `newBadgeCount` (an ordering, not dates).
+- `lib/watchlist.ts` (useWatchlist, key afterlight:my-list, Zod validated, storage-event sync) + `components/ui/watchlist-button.tsx`. Phase 4 builds the My List page on it.
+- editorial.json now uses the real slugs (hero sintel, tears-of-steel, elephants-dream; collections). New fields in schema: recentlyAdded, newBadgeCount.
+- Tests: tests/unit/{browse,watchlist}.test.ts, tests/e2e/phase2.spec.ts. Screenshots: docs/screenshots/phase2/ (scripts/screenshots.mjs).
+
+## Pending
+1. Phase 3: details pages (seasons/episodes), Watch player (plan in ARCHITECTURE.md). Replace remaining stubs (StubNotice).
+2. Phase 4: Genres, Trending, Search, My List page, About; TMDB feed if key present. Pages still pass Title via toCard().
+3. Phase 5-7 per PROJECT_PLAN.md. UI/UX review gate before any push.
+4. Hero loop fix for the media agent: tears-of-steel loop has burned-in subtitle text around 2.5-5 s; re-cut to the sunset/rooftop shots (loop time ~7-13 s) or another segment without subtitles.
 
 ## Last verified checks
 See the Phase 0 report in this file's git history; rerun before trusting. All of lint (0 errors), typecheck, unit
@@ -85,8 +91,7 @@ tests, build, e2e smoke (5 tests incl. axe, 390 px no overflow, 240 px lock) and
   `CATALOG_SOURCE=sample` (optional).
 
 ## Next step
-Phase 2: build the Home page per `docs/design-direction.md` (refs 1 and 2) using `Rail`, `TitleCard`, `SectionHeader`,
-`ButtonLink`, `Badge`, and `useCanAutoplayVideo()` for the hero loop; then Movies and TV Shows.
+Phase 3: movie/TV details pages and the Watch player (Sonnet).
 
 ## Waiting for approval
 - None for Phase 2. Video/voice generation and pushes still need Steeven's yes.

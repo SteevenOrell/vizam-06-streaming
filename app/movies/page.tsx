@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
-import { PageIntro, StubNotice } from "@/components/layout/page-intro";
-import { TitleGrid } from "@/components/ui/title-grid";
-import { getTitles } from "@/lib/content/catalog";
+import { Suspense } from "react";
+import { BrowseView, CardGrid } from "@/components/browse/browse-view";
+import { PageIntro } from "@/components/layout/page-intro";
+import { getTitles, toCards } from "@/lib/content/catalog";
+import type { SortKey } from "@/lib/content/browse";
 
 export const metadata: Metadata = {
   title: "Movies",
   description: "Open-licence feature films and shorts on AFTERLIGHT, a VIZAM concept streaming site.",
 };
 
+const SORTS: SortKey[] = ["newest", "oldest", "az", "shortest", "longest"];
+
 export default function MoviesPage() {
-  const movies = getTitles({ type: "movie" });
+  const movies = toCards(getTitles({ type: "movie" }));
   return (
     <>
       <PageIntro eyebrow="Browse" title="Movies">
         Feature films and shorts released under Creative Commons or in the public domain.
       </PageIntro>
-      <TitleGrid titles={movies} label="Movies" />
-      <StubNotice phase="Phase 2" />
+      <Suspense fallback={<CardGrid cards={movies} label="Movies" />}>
+        <BrowseView items={movies} noun={["film", "films"]} sorts={SORTS} empty={null} />
+      </Suspense>
     </>
   );
 }
