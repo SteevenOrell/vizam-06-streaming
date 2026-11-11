@@ -1,0 +1,14 @@
+{
+  "hero": ["ember-line", "the-quiet-hours", "saltglass"],
+  "trending": ["saltglass", "ember-line", "the-quiet-hours"],
+  "collections": [
+    {
+      "slug": "new-on-afterlight",
+      "eyebrow": "Just added",
+      "title": "New on AFTERLIGHT",
+      "titles": ["ember-line", "saltglass", "the-quiet-hours"],
+      "layout": "landscape"
+    }
+  ],
+  "genreBlurbs": {}
+}
