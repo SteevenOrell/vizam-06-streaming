@@ -35,9 +35,7 @@
     },
     "images": {
       "poster": "/media/posters/big-buck-bunny.webp",
-      "posterSmall": "/media/posters/big-buck-bunny-sm.webp",
       "backdrop": "/media/backdrops/big-buck-bunny.webp",
-      "backdropSmall": "/media/backdrops/big-buck-bunny-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABwBACdASoMABIAPwFqrE6rJiQiMAgBYCAJZgCdMoR3ACWTDRKgcWCn1mfUAAD+jOkeyIyUG6lAqb0zsjSwGMr3P8abPAfhbIKbMCBHO5Gn9jQicBWWFEfWL4QuuNHNthVaPYrHUi7vnyQHpBDvF318YXRi7X7KxfXAAA==",
       "backdropBlur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAQCdASoQAAkAA8BgJbACdADcPeb9MADzyD87PzFCJ7fu7DIKKGEJVkwCvsPtIsHK1mU7qbmVBhw0v7S/Axl6duogcUPz8bf6MnZ7mYh7VCAgQAA="
     },
@@ -54,7 +52,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/big-buck-bunny-sm.webp",
+        "poster": "/media/backdrops/big-buck-bunny.webp",
         "durationSeconds": 635,
         "captions": [
           {
@@ -106,9 +104,7 @@
     },
     "images": {
       "poster": "/media/posters/elephants-dream.webp",
-      "posterSmall": "/media/posters/elephants-dream-sm.webp",
       "backdrop": "/media/backdrops/elephants-dream.webp",
-      "backdropSmall": "/media/backdrops/elephants-dream-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJQBOgA8fhYHDJXbsAAAD+zGHfWU62WBLpFjJylibpiRO8bqWoJGKHgsnelt4PJI4OYw7ofObnsQRDyFoUAAAA",
       "backdropBlur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA8BgJZACdADz5WyGAAD+3HXwV87Z5Xu/imqk4avY2f3gs18cBV6vK4AA"
     },
@@ -125,7 +121,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/elephants-dream-sm.webp",
+        "poster": "/media/backdrops/elephants-dream.webp",
         "durationSeconds": 658,
         "captions": [
           {
@@ -194,11 +190,9 @@
     },
     "images": {
       "poster": "/media/posters/sintel.webp",
-      "posterSmall": "/media/posters/sintel-sm.webp",
       "backdrop": "/media/backdrops/sintel.webp",
-      "backdropSmall": "/media/backdrops/sintel-sm.webp",
-      "posterBlur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJYgCdAB6WRpvovUuloAD90kvPQwfucyoCLSzMeB0J2g+jlDpWk2pKcFePt+IzO0Apgx3sAAA=",
-      "backdropBlur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA8BgJbACdAEVzwSEtcgA/pG4SA8TsBEnTCnio3BFpO95aYxcXJ6o6/sWvvsepwAA"
+      "posterBlur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoMABIAPwFqrE8rJiQiMAgBYCAJZQCdACBU3RaDY1Psv6tkgAD+3XqzdZ1Ud3cjhTLzze9AnFX+Pgpz3QLEODR9pC2l/za8CP2UDndKies1HnJiWDEcZZAAAAA=",
+      "backdropBlur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAQCdASoQAAkAA8BgJZQAAltCGQAA/veCaA7fTmtt3jmi3A0eIHfI7Xil1ZpbWFqIGRxzIu6Fz+9AAAA="
     },
     "videos": [
       {
@@ -213,7 +207,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/sintel-sm.webp",
+        "poster": "/media/backdrops/sintel.webp",
         "durationSeconds": 888,
         "captions": [
           {
@@ -238,6 +232,23 @@
         ],
         "poster": "/media/hero/sintel-hero-poster.webp",
         "durationSeconds": 14,
+        "captions": [],
+        "host": "local"
+      },
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/sintel-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/sintel-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/sintel-preview-poster.webp",
+        "durationSeconds": 12,
         "captions": [],
         "host": "local"
       }
@@ -287,9 +298,7 @@
     },
     "images": {
       "poster": "/media/posters/tears-of-steel.webp",
-      "posterSmall": "/media/posters/tears-of-steel-sm.webp",
       "backdrop": "/media/backdrops/tears-of-steel.webp",
-      "backdropSmall": "/media/backdrops/tears-of-steel-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQAwCdASoMABIAPwFqrE8rJaQiMAgBYCAJQBOgATjdjlyLsADz+zTapTnCVZBZd7lgfR7dbdtzmKS2jgtw0SV6STO1RrJQdoXe0oczfTvfjQgMcgCP/OSOGQUFFEDROHsi6aRHwRAcBpjAAAA=",
       "backdropBlur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAkAA8BgJYgCdAC8bICwAAD+mF5krlBiDBysIi4UTd2qSXXqUOOTm2XRqiU6jT8VxAOCTO4c8dnauFo6lxlAAAA="
     },
@@ -306,7 +315,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/tears-of-steel-sm.webp",
+        "poster": "/media/backdrops/tears-of-steel.webp",
         "durationSeconds": 734,
         "captions": [
           {
@@ -331,6 +340,23 @@
         ],
         "poster": "/media/hero/tears-of-steel-hero-poster.webp",
         "durationSeconds": 14,
+        "captions": [],
+        "host": "local"
+      },
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/tears-of-steel-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/tears-of-steel-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/tears-of-steel-preview-poster.webp",
+        "durationSeconds": 12,
         "captions": [],
         "host": "local"
       }
@@ -375,9 +401,7 @@
     },
     "images": {
       "poster": "/media/posters/cosmos-laundromat.webp",
-      "posterSmall": "/media/posters/cosmos-laundromat-sm.webp",
       "backdrop": "/media/backdrops/cosmos-laundromat.webp",
-      "backdropSmall": "/media/backdrops/cosmos-laundromat-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoMABIAPwFqrE8rJiQiMAgBYCAJbACdMoR3ACx6NYOhLeb3ON8AAPuX+Q83jxSP8VC0Fhjxaul6l3u8vjlUIRSm4oOcuRr5vntngPMyV9fmoNXcPb9dMpGNZs6bZyHULUDWSSj0B0m0QCdBbnYNggpBggo2mVoSeGQAAA==",
       "backdropBlur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAkAA8BgJbACdADROs6ewAD+oTFj7zS4Nvdeap38lp0rCfH8FTVXgIvbNGJoECYQomnE/rLQDUjJFGtBDMzQIFTJQXZ/yQ3qqj4zJyvEmW77xJr/MbH2Q4gAAA=="
     },
@@ -394,7 +418,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/cosmos-laundromat-sm.webp",
+        "poster": "/media/backdrops/cosmos-laundromat.webp",
         "durationSeconds": 731,
         "captions": [
           {
@@ -404,6 +428,40 @@
           }
         ],
         "host": "wikimedia"
+      },
+      {
+        "kind": "hero-loop",
+        "src": [
+          {
+            "url": "/media/hero/cosmos-laundromat-hero.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/hero/cosmos-laundromat-hero.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/hero/cosmos-laundromat-hero-poster.webp",
+        "durationSeconds": 14,
+        "captions": [],
+        "host": "local"
+      },
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/cosmos-laundromat-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/cosmos-laundromat-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/cosmos-laundromat-preview-poster.webp",
+        "durationSeconds": 12,
+        "captions": [],
+        "host": "local"
       }
     ]
   },
@@ -443,9 +501,7 @@
     },
     "images": {
       "poster": "/media/posters/spring.webp",
-      "posterSmall": "/media/posters/spring-sm.webp",
       "backdrop": "/media/backdrops/spring.webp",
-      "backdropSmall": "/media/backdrops/spring-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoMABIAPwFqrk8rJiQiMAgBYCAJYgCw7CHYnGnM/4wB0QAA/corEYiav9QTLKqTerqEOU3Yexw79LXWbqyoQCw0AAzPjZAA",
       "backdropBlur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAACwAQCdASoQAAkAA8BgJQBOgBui7tbQAP3Du8R+H5RuTPN/NQkxro1YZq28lqjKwsqkgAAA"
     },
@@ -462,7 +518,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/spring-sm.webp",
+        "poster": "/media/backdrops/spring.webp",
         "durationSeconds": 464,
         "captions": [
           {
@@ -472,6 +528,40 @@
           }
         ],
         "host": "wikimedia"
+      },
+      {
+        "kind": "hero-loop",
+        "src": [
+          {
+            "url": "/media/hero/spring-hero.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/hero/spring-hero.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/hero/spring-hero-poster.webp",
+        "durationSeconds": 15,
+        "captions": [],
+        "host": "local"
+      },
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/spring-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/spring-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/spring-preview-poster.webp",
+        "durationSeconds": 12,
+        "captions": [],
+        "host": "local"
       }
     ]
   },
@@ -509,9 +599,7 @@
     },
     "images": {
       "poster": "/media/posters/sprite-fright.webp",
-      "posterSmall": "/media/posters/sprite-fright-sm.webp",
       "backdrop": "/media/backdrops/sprite-fright.webp",
-      "backdropSmall": "/media/backdrops/sprite-fright-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwBACdASoMABIAPwFqrE8rJiQiMAgBYCAJZACdMoADTrl8y4c7gjuyBYAA/uvdxvsUF+esP7VYrjLKIzT+W+H+dULpplry+qlRKvUpY62rhjEyiZgJLJeADt1X+DztYfIvERgQAAA=",
       "backdropBlur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAkAA8BgJbACdAEDX/Mh/UAA/vESmIULp6kF8ziMkBOv8/6Yq44PsG0Pjavq0rhRWCLS8M/SR9uITDEvjAAA"
     },
@@ -528,7 +616,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/sprite-fright-sm.webp",
+        "poster": "/media/backdrops/sprite-fright.webp",
         "durationSeconds": 630,
         "captions": [
           {
@@ -575,11 +663,9 @@
     },
     "images": {
       "poster": "/media/posters/charge.webp",
-      "posterSmall": "/media/posters/charge-sm.webp",
       "backdrop": "/media/backdrops/charge.webp",
-      "backdropSmall": "/media/backdrops/charge-sm.webp",
-      "posterBlur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAgCdASoMABIAPwForE6rJiQiMAgBYCAJZQC7AC2OAAD+7ohYX8KcUfydtjgm8zQ+G0yqJ9G9pDO+gOB2bHMrGZ59UwAA",
-      "backdropBlur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAABwAQCdASoQAAkAA8BgJYwCdAFAAAD+8WfmWN5YleXb6yqUGpDtyq4SQY4IAA=="
+      "posterBlur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACQAwCdASoMABIAPwForE6rJiQiMAgBYCAJZwAASfmcbAnS8hxwAP65SucRkCssN1E3t8x7ogBw+keD7t4OY6DhyeFYaKWQL4agwcvElk7MnBQG3WDoL6JoKD56Z4AA",
+      "backdropBlur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAQCdASoQAAkAA8BgJZQAAgdCd9YAAP7vY8cT9q6NBp7ecIZzGevE74lOUuXDDQfHbQKvFofT4F74vGB3z4AA"
     },
     "videos": [
       {
@@ -594,7 +680,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/charge-sm.webp",
+        "poster": "/media/backdrops/charge.webp",
         "durationSeconds": 263,
         "captions": [
           {
@@ -641,9 +727,7 @@
     },
     "images": {
       "poster": "/media/posters/wing-it.webp",
-      "posterSmall": "/media/posters/wing-it-sm.webp",
       "backdrop": "/media/backdrops/wing-it.webp",
-      "backdropSmall": "/media/backdrops/wing-it-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoMABIAPwForE6rJaQiMAgBYCAJZACdACLAh3vcs1DiagAA/RPq9MMo926AYuw8l2FtSIdxVifyGqb0PytOqD87e6FVVLfSAtIAmNl0+5d0Ctd5F1+X4l1jMoAF5+FzodbEgAAA",
       "backdropBlur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAQCdASoQAAkAA8BgJZACdADM62ekAAD+rSNFuOONGQYyfw4cjZEOTdTyUSWgrKb1T2yTxvy19N2DiQhd7wSBWOyFQ2ShnugAAA=="
     },
@@ -660,7 +744,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/wing-it-sm.webp",
+        "poster": "/media/backdrops/wing-it.webp",
         "durationSeconds": 238,
         "captions": [],
         "host": "wikimedia"
@@ -709,11 +793,9 @@
     },
     "images": {
       "poster": "/media/posters/night-of-the-living-dead.webp",
-      "posterSmall": "/media/posters/night-of-the-living-dead-sm.webp",
       "backdrop": "/media/backdrops/night-of-the-living-dead.webp",
-      "backdropSmall": "/media/backdrops/night-of-the-living-dead-sm.webp",
-      "posterBlur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJaQAAW+64vowsefvvwAD+28QPdz4R00YEtpubLyiHKooMLGrrEiyI9LtV0agAAAA=",
-      "backdropBlur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoQAAkAA8BgJaQAAsfwVyH9zYAAziQ+SnozndTralmcxuvm47PQ7rIm3R5nbKHcgNiBqZHAAAA="
+      "posterBlur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJaQAASrmXVuhYHcokaAD+o3c1rjJrjbv9zH9zBqmkt8r0Ms+tC1BxNDGOB9+ApI3sqfUbzoAfwyLa9Wilsxa5AjyZg1g/vuRty6TElujAAAAA",
+      "backdropBlur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoQAAkAA8BgJaQAAja8ANCQAP72kv4zJKbK28zH0+/Ir5Y+wchQE8yoHpmYwq4PMFVxq4PdeNEMVITPxMQAAA=="
     },
     "videos": [
       {
@@ -728,11 +810,82 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/night-of-the-living-dead-sm.webp",
+        "poster": "/media/backdrops/night-of-the-living-dead.webp",
         "durationSeconds": 5753,
         "captions": [
           {
             "src": "/media/captions/night-of-the-living-dead.en.vtt",
+            "lang": "en",
+            "label": "English"
+          }
+        ],
+        "host": "wikimedia"
+      }
+    ]
+  },
+  {
+    "id": "nosferatu",
+    "slug": "nosferatu",
+    "type": "movie",
+    "title": "Nosferatu",
+    "year": 1922,
+    "runtimeMinutes": 92,
+    "genres": [
+      "Horror",
+      "Fantasy",
+      "Drama"
+    ],
+    "synopsis": "A young estate agent travels to a remote castle to close a property deal with a pale, hungry count. The count follows him home, and a plague follows the count.",
+    "tagline": "The shadow arrives before the man.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "F. W. Murnau"
+      ],
+      "cast": [
+        "Max Schreck",
+        "Gustav von Wangenheim",
+        "Greta Schroeder",
+        "Alexander Granach"
+      ],
+      "writers": [
+        "Henrik Galeen"
+      ]
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"Nosferatu\" (1922), F. W. Murnau. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nosferatu_(1922).webm",
+      "author": "F. W. Murnau",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/nosferatu.webp",
+      "backdrop": "/media/backdrops/nosferatu.webp",
+      "posterBlur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABQAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJaQAASMplWlHO4AD+eEZEfNgygPnHlv2L6YZdo8pxsof5dAi9j2w1nb0V2RqWqBnjF9hhqPwAAA==",
+      "backdropBlur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoQAAkAA8BgJaQATgADB/wAAP6p8qimr7eRWsdiI6Iour8UKDe91thWyaTnH2YqndUaLYY66AAAAA=="
+    },
+    "videos": [
+      {
+        "kind": "feature",
+        "src": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/Nosferatu_%281922%29.webm/Nosferatu_%281922%29.webm.1080p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          },
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/Nosferatu_%281922%29.webm/Nosferatu_%281922%29.webm.480p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          }
+        ],
+        "poster": "/media/backdrops/nosferatu.webp",
+        "durationSeconds": 5519,
+        "captions": [
+          {
+            "src": "/media/captions/nosferatu.en.vtt",
             "lang": "en",
             "label": "English"
           }
@@ -785,9 +938,7 @@
     },
     "images": {
       "poster": "/media/posters/the-general.webp",
-      "posterSmall": "/media/posters/the-general-sm.webp",
       "backdrop": "/media/backdrops/the-general.webp",
-      "backdropSmall": "/media/backdrops/the-general-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJZQC7ABuVINzwKrGAgAD+1et0YFBHY7BIXMHQ0k6EpY0AyKkrSPf4pi7rX9H7LOpwxaPN71YIKvG3j5b3aA5QAAA=",
       "backdropBlur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA8BgJYwCdAEVE+3mAADMo0OvnpZi3Ad1hCfhm1YVsKL1ATmr92hyQ6CDWzwyLrCYAAA="
     },
@@ -804,7 +955,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/the-general-sm.webp",
+        "poster": "/media/backdrops/the-general.webp",
         "durationSeconds": 4552,
         "captions": [],
         "host": "wikimedia"
@@ -853,9 +1004,7 @@
     },
     "images": {
       "poster": "/media/posters/his-girl-friday.webp",
-      "posterSmall": "/media/posters/his-girl-friday-sm.webp",
       "backdrop": "/media/backdrops/his-girl-friday.webp",
-      "backdropSmall": "/media/backdrops/his-girl-friday-sm.webp",
       "posterBlur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACQAwCdASoMABIAPwFqrU8rJaQiMAgBYCAJaQAAUgDpzWuYxLQAAP7OoSbGxuDNWJYPE+IV581Bj3VoOCvkSc6NJHQDs76w/sVsnSCSuQ2ZEaoAAAA=",
       "backdropBlur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAkAA8BgJaQAAxNb9/n/AAD+6fXMQC/4VfAbtASWm1v63VCrrdHADIAe3hlZLEgQH2ItLQuAAAAA"
     },
@@ -872,7 +1021,7 @@
             "type": "video/webm; codecs=\"vp9, opus\""
           }
         ],
-        "poster": "/media/backdrops/his-girl-friday-sm.webp",
+        "poster": "/media/backdrops/his-girl-friday.webp",
         "durationSeconds": 5518,
         "captions": [
           {
@@ -882,6 +1031,730 @@
           }
         ],
         "host": "wikimedia"
+      }
+    ]
+  },
+  {
+    "id": "charade",
+    "slug": "charade",
+    "type": "movie",
+    "title": "Charade",
+    "year": 1963,
+    "runtimeMinutes": 113,
+    "genres": [
+      "Thriller",
+      "Comedy",
+      "Romance"
+    ],
+    "synopsis": "A widow in Paris learns her late husband hid a fortune, and a ring of dangerous men wants it. A charming stranger offers help, but he keeps changing his name.",
+    "tagline": "Nothing in Paris is quite what it seems.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Stanley Donen"
+      ],
+      "cast": [
+        "Cary Grant",
+        "Audrey Hepburn",
+        "Walter Matthau",
+        "James Coburn",
+        "George Kennedy"
+      ],
+      "writers": [
+        "Peter Stone"
+      ]
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"Charade\" (1963), Stanley Donen. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Charade_(1963).webm",
+      "author": "Stanley Donen",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/charade.webp",
+      "backdrop": "/media/backdrops/charade.webp",
+      "posterBlur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoMABIAPwFqrE8rJaQiMAgBYCAJQBdgA3akkfSOQ+coAAD+5Z235cDAUKBUiBnIhnsmM072gtoF6goj27jnYh7FGWrIAA==",
+      "backdropBlur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoQAAkAA8BgJYwCdAEDpXUJ9sAA/ulc7Pl58YDKI/wo7YokztUeh0C6PccSQ24UAAA="
+    },
+    "videos": [
+      {
+        "kind": "feature",
+        "src": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/dc/Charade_%281963%29.webm/Charade_%281963%29.webm.480p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          }
+        ],
+        "poster": "/media/backdrops/charade.webp",
+        "durationSeconds": 6804,
+        "captions": [
+          {
+            "src": "/media/captions/charade.en.vtt",
+            "lang": "en",
+            "label": "English"
+          }
+        ],
+        "host": "wikimedia"
+      }
+    ]
+  },
+  {
+    "id": "a-trip-to-the-moon",
+    "slug": "a-trip-to-the-moon",
+    "type": "movie",
+    "title": "A Trip to the Moon",
+    "year": 1902,
+    "runtimeMinutes": 13,
+    "genres": [
+      "Sci-Fi",
+      "Fantasy",
+      "Adventure"
+    ],
+    "synopsis": "A club of scholars fires itself to the Moon in a cannon shell, meets hostile Selenites and tumbles home. A hand-made trick film from the first years of cinema.",
+    "tagline": "Cinema takes its first giant leap.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Georges Melies"
+      ],
+      "cast": [
+        "Georges Melies",
+        "Bleuette Bernon",
+        "Victor Andre"
+      ],
+      "writers": [
+        "Georges Melies"
+      ]
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"A Trip to the Moon\" (1902), Georges Melies. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Le_Voyage_dans_la_Lune_(1902).webm",
+      "author": "Georges Melies",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/a-trip-to-the-moon.webp",
+      "backdrop": "/media/backdrops/a-trip-to-the-moon.webp",
+      "posterBlur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAACwAwCdASoMABIAPwFqrU8rJaQiMAgBYCAJaQAASEk9q/acz2wkAAD9TApiv8j57JO8mRRJ07EX+SHIZjf3rM6wGNjwprJ/gvynd2+PQADZ1lP6g0GAdm38QUoPnlk8K9hU+TsIAAA=",
+      "backdropBlur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAkAA8BgJaQAAgSDgigAAP24xQp+mZ1gfVt6ere5vBQ/twjdu4V7Bs2qMeunZU11ZdbxNT9+91mHh2SDPoAAAAA="
+    },
+    "videos": [
+      {
+        "kind": "short",
+        "src": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6d/Le_Voyage_dans_la_Lune_%281902%29.webm/Le_Voyage_dans_la_Lune_%281902%29.webm.1080p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          },
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6d/Le_Voyage_dans_la_Lune_%281902%29.webm/Le_Voyage_dans_la_Lune_%281902%29.webm.480p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          }
+        ],
+        "poster": "/media/backdrops/a-trip-to-the-moon.webp",
+        "durationSeconds": 766,
+        "captions": [],
+        "host": "wikimedia"
+      },
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/a-trip-to-the-moon-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/a-trip-to-the-moon-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/a-trip-to-the-moon-preview-poster.webp",
+        "durationSeconds": 12,
+        "captions": [],
+        "host": "local"
+      }
+    ]
+  },
+  {
+    "id": "the-cabinet-of-dr-caligari",
+    "slug": "the-cabinet-of-dr-caligari",
+    "type": "movie",
+    "title": "The Cabinet of Dr. Caligari",
+    "year": 1920,
+    "runtimeMinutes": 75,
+    "genres": [
+      "Horror",
+      "Thriller",
+      "Fantasy"
+    ],
+    "synopsis": "A travelling showman unveils a sleepwalker who can predict the future. When killings begin in the town, a young man sets out to prove who is behind them.",
+    "tagline": "The world looks different from inside the cabinet.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Robert Wiene"
+      ],
+      "cast": [
+        "Werner Krauss",
+        "Conrad Veidt",
+        "Friedrich Feher",
+        "Lil Dagover"
+      ],
+      "writers": [
+        "Carl Mayer",
+        "Hans Janowitz"
+      ]
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"The Cabinet of Dr. Caligari\" (1920), Robert Wiene. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Cabinet_of_Dr._Caligari_(1920).webm",
+      "author": "Robert Wiene",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/the-cabinet-of-dr-caligari.webp",
+      "backdrop": "/media/backdrops/the-cabinet-of-dr-caligari.webp",
+      "posterBlur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoMABIAPwForE6rJiQiMAgBYCAJaQAAPH4UThjk+HpwGAD+tcOFoZMJ3aZ4KscruCgdV/GLP6MPZpmhwxrHhxdgS5lygjqieJu5jt2wlUDdw0tdS40AAAAA",
+      "backdropBlur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAQCdASoQAAkAA8BgJaQAApNH1s2AAP7eEBiJgcyNZ7Tcdzg/P5FFPrOUmZJGJGth2XsQLsn12h/y8Ko0RZu3bf/MWbevE2fmvIJZnQTRVljmAAA="
+    },
+    "videos": [
+      {
+        "kind": "feature",
+        "src": [
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/88/The_Cabinet_of_Dr._Caligari_%281920%29.webm/The_Cabinet_of_Dr._Caligari_%281920%29.webm.1080p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          },
+          {
+            "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/8/88/The_Cabinet_of_Dr._Caligari_%281920%29.webm/The_Cabinet_of_Dr._Caligari_%281920%29.webm.480p.vp9.webm",
+            "type": "video/webm; codecs=\"vp9, opus\""
+          }
+        ],
+        "poster": "/media/backdrops/the-cabinet-of-dr-caligari.webp",
+        "durationSeconds": 4527,
+        "captions": [
+          {
+            "src": "/media/captions/the-cabinet-of-dr-caligari.en.vtt",
+            "lang": "en",
+            "label": "English"
+          }
+        ],
+        "host": "wikimedia"
+      }
+    ]
+  },
+  {
+    "id": "caminandes",
+    "slug": "caminandes",
+    "type": "series",
+    "title": "Caminandes",
+    "year": 2013,
+    "runtimeMinutes": 2,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Family"
+    ],
+    "synopsis": "A hungry llama named Koro chases a snack across the Patagonian landscape and keeps meeting an equally stubborn rival. Three bite-sized slapstick shorts.",
+    "tagline": "Three llamas of trouble.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Pablo Vazquez"
+      ],
+      "cast": [],
+      "writers": [
+        "Pablo Vazquez"
+      ]
+    },
+    "licence": {
+      "name": "CC BY 3.0",
+      "url": "https://creativecommons.org/licenses/by/3.0",
+      "attribution": "\"Caminandes\" (2013) by Blender Foundation (Pablo Vazquez), CC BY 3.0. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caminandes-_Llama_Drama_-_Short_Movie.ogv",
+      "author": "Blender Foundation (Pablo Vazquez)",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/caminandes.webp",
+      "backdrop": "/media/backdrops/caminandes.webp",
+      "posterBlur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJZAC7Ef/gNoixmHMOjUwA/tPk4AWfXXqdGm4IcQj2lsA9iAspY+ZDjs3EDGZPkMUsbmgt9qrfesdkobqp6AAA",
+      "backdropBlur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAkAA8BgJQBYdiHPVTP3+gAA/up23r1TDhjYPEGumyMh2USdSo2eYhFkeAAA"
+    },
+    "videos": [
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/caminandes-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/caminandes-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/caminandes-preview-poster.webp",
+        "durationSeconds": 12,
+        "captions": [],
+        "host": "local"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "Llama Drama",
+            "synopsis": "Koro the llama is hungry, the food is on the wrong side of a fence, and the weather is not helping.",
+            "runtimeMinutes": 1,
+            "still": "/media/stills/caminandes-s1e1.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d0/Caminandes-_Llama_Drama_-_Short_Movie.ogv/Caminandes-_Llama_Drama_-_Short_Movie.ogv.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d0/Caminandes-_Llama_Drama_-_Short_Movie.ogv/Caminandes-_Llama_Drama_-_Short_Movie.ogv.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/caminandes-s1e1.webp",
+                "durationSeconds": 90,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "title": "Gran Dillama",
+            "synopsis": "Koro meets a very small, very determined armadillo who has plans of his own for the same patch of grass.",
+            "runtimeMinutes": 2,
+            "still": "/media/stills/caminandes-s1e2.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7c/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm/Caminandes_-_Gran_Dillama_-_Blender_Foundation%27s_new_Open_Movie.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/caminandes-s1e2.webp",
+                "durationSeconds": 146,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "title": "Llamigos",
+            "synopsis": "Winter arrives and Koro is still chasing his dream of the perfect berry, with a rival who will not give up.",
+            "runtimeMinutes": 3,
+            "still": "/media/stills/caminandes-s1e3.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm/Caminandes_3_-_Llamigos_-_Blender_Animated_Short.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/caminandes-s1e3.webp",
+                "durationSeconds": 150,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fleischer-superman",
+    "slug": "fleischer-superman",
+    "type": "series",
+    "title": "Superman: The Fleischer Cartoons",
+    "year": 1941,
+    "runtimeMinutes": 9,
+    "genres": [
+      "Animation",
+      "Action",
+      "Sci-Fi"
+    ],
+    "synopsis": "Lavishly animated 1940s adventures of a reporter who is not quite what he seems. Runaway robots, arctic monsters and mad inventors threaten the city.",
+    "tagline": "Hand-drawn thrills from the golden age.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Dave Fleischer"
+      ],
+      "cast": [
+        "Bud Collyer",
+        "Joan Alexander",
+        "Jackson Beck"
+      ],
+      "writers": []
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"Superman: The Fleischer Cartoons\" (1941), Fleischer Studios. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_Mechanical_Monsters.webm",
+      "author": "Fleischer Studios",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/fleischer-superman.webp",
+      "backdrop": "/media/backdrops/fleischer-superman.webp",
+      "posterBlur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABwBACdASoMABIAPwFqrE8rJiQiMAgBYCAJbACdMoGv/gMlcCboZUylDomNAAD+cSA8Q/bkMLSRf4oDoYajW7wjCtmZvF0pWBNQCwoyD/85gVo1TK/Yn1FTqtjW4eHhoC1TyQHTplYIcG/iVOuCHBv4PI9lsAlxxgAAAA==",
+      "backdropBlur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAQCdASoQAAkAA8BgJbACdADp5gnDFAAA/quy+oLj0aQi8B3JT12hoO4ajAg05AGK7zusPj0VB/9QDvTj9H4od/2BK10Wd+RKFafSvhK7gAAA"
+    },
+    "videos": [
+      {
+        "kind": "preview",
+        "src": [
+          {
+            "url": "/media/previews/fleischer-superman-preview.mp4",
+            "type": "video/mp4; codecs=\"avc1.4d401f\""
+          },
+          {
+            "url": "/media/previews/fleischer-superman-preview.webm",
+            "type": "video/webm; codecs=\"vp9\""
+          }
+        ],
+        "poster": "/media/previews/fleischer-superman-preview-poster.webp",
+        "durationSeconds": 12,
+        "captions": [],
+        "host": "local"
+      }
+    ],
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "The Mechanical Monsters",
+            "synopsis": "A mad scientist unleashes a squad of flying robots on the city, and a reporter has to get the story and the rescue done in the same afternoon.",
+            "runtimeMinutes": 10,
+            "still": "/media/stills/fleischer-superman-s1e1.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/The_Mechanical_Monsters.webm/The_Mechanical_Monsters.webm.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/49/The_Mechanical_Monsters.webm/The_Mechanical_Monsters.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/fleischer-superman-s1e1.webp",
+                "durationSeconds": 616,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 2,
+            "title": "Billion Dollar Limited",
+            "synopsis": "Armed robbers target a speeding train carrying a vast shipment of gold, and one passenger is determined to stop them.",
+            "runtimeMinutes": 8,
+            "still": "/media/stills/fleischer-superman-s1e2.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/Billion_Dollar_Limited_%281942%29.webm/Billion_Dollar_Limited_%281942%29.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/fleischer-superman-s1e2.webp",
+                "durationSeconds": 493,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "title": "The Arctic Giant",
+            "synopsis": "A frozen colossus thaws out in the far north, is shipped south for display, and breaks loose over the city.",
+            "runtimeMinutes": 8,
+            "still": "/media/stills/fleischer-superman-s1e3.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c5/The_Arctic_Giant_%281942%29.webm/The_Arctic_Giant_%281942%29.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/fleischer-superman-s1e3.webp",
+                "durationSeconds": 493,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 4,
+            "title": "Electric Earthquake",
+            "synopsis": "A vengeful inventor plans to shake Manhattan apart with a device buried beneath the island.",
+            "runtimeMinutes": 8,
+            "still": "/media/stills/fleischer-superman-s1e4.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4d/Electric_Earthquake_%281942%29.webm/Electric_Earthquake_%281942%29.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/fleischer-superman-s1e4.webp",
+                "durationSeconds": 501,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "felix-the-cat-1958",
+    "slug": "felix-the-cat-1958",
+    "type": "series",
+    "title": "Felix the Cat (1958)",
+    "year": 1958,
+    "runtimeMinutes": 7,
+    "genres": [
+      "Animation",
+      "Comedy",
+      "Adventure"
+    ],
+    "synopsis": "A cat with a magic bag of tricks gets into scrapes with a scheming professor and his sidekick. Two early episodes of the late-1950s television cartoon.",
+    "tagline": "Whatever you need, it is in the bag.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Joe Oriolo"
+      ],
+      "cast": [
+        "Jack Mercer"
+      ],
+      "writers": [
+        "Joe Oriolo"
+      ]
+    },
+    "licence": {
+      "name": "Public domain (US; per Wikimedia Commons file page)",
+      "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "attribution": "\"Felix the Cat (1958)\" (1958), Joe Oriolo. Public domain. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:001-Felix-the-Cat-S01E01-The-Magic-Bag.webm",
+      "author": "Joe Oriolo",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/felix-the-cat-1958.webp",
+      "backdrop": "/media/backdrops/felix-the-cat-1958.webp",
+      "posterBlur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwAwCdASoMABIAPwFqrE8rJiQiMAgBYCAJQBdgBDiLMzQAAPxSVqLPd1isNymzraWDgW0//Zqp6SMDSsqpL5XQ7lygO7AgbP6jAAs9mwbh/oCCgAA=",
+      "backdropBlur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAkAA8BgJbAC7AC4cLKQ0AD3z3T5kqhpNgfus8ie7kBly2ShlFzgEBotvMur+l+yvt5d0e23N4f2SXDjc7agAAA="
+    },
+    "videos": [],
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 1,
+            "title": "The Magic Bag",
+            "synopsis": "Felix and his bag of tricks head into the first of his television adventures.",
+            "runtimeMinutes": 7,
+            "still": "/media/stills/felix-the-cat-1958-s1e1.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/4/44/001-Felix-the-Cat-S01E01-The-Magic-Bag.webm/001-Felix-the-Cat-S01E01-The-Magic-Bag.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/felix-the-cat-1958-s1e1.webp",
+                "durationSeconds": 446,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "title": "Electronic Brainwasher",
+            "synopsis": "The Professor builds a gadget that scrambles minds, and Felix has to outwit it with a trick from the bag.",
+            "runtimeMinutes": 7,
+            "still": "/media/stills/felix-the-cat-1958-s1e6.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/006-Felix-the-Cat-S01E06-Electronic-Brainwasher.webm/006-Felix-the-Cat-S01E06-Electronic-Brainwasher.webm.240p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/felix-the-cat-1958-s1e6.webp",
+                "durationSeconds": 448,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hubblecast",
+    "slug": "hubblecast",
+    "type": "series",
+    "title": "Hubblecast",
+    "year": 2015,
+    "runtimeMinutes": 8,
+    "genres": [
+      "Documentary",
+      "Science"
+    ],
+    "synopsis": "Short science programmes from the European Space Agency team that works with the Hubble Space Telescope. These two 2015 episodes cover fan-made videos for Hubble’s birthday and what Hubble taught us about Pluto.",
+    "tagline": "The universe, explained in minutes.",
+    "rating": {
+      "source": "none"
+    },
+    "credits": {
+      "directors": [
+        "Mathias Jaeger"
+      ],
+      "cast": [],
+      "writers": [
+        "Mathias Jaeger",
+        "Nicky Jenner",
+        "Georgia Bladon"
+      ]
+    },
+    "licence": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0",
+      "attribution": "\"Hubblecast\" (2015) by ESA/Hubble (European Space Agency), CC BY 4.0. Source: Wikimedia Commons.",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hubblecast_85.webm",
+      "author": "ESA/Hubble (European Space Agency)",
+      "modifications": "Posters, backdrops, hero loops and previews are derived frames/cuts (see docs/CONTENT_LICENSES.md); full films are streamed unmodified from Wikimedia Commons."
+    },
+    "images": {
+      "poster": "/media/posters/hubblecast.webp",
+      "backdrop": "/media/backdrops/hubblecast.webp",
+      "posterBlur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABQAwCdASoMABIAPwFqrU8rJaQiMAgBYCAJaQAAW/CfgDTwAAD+8qk2Ba6ICElndO0vO/8EGQQ8fO7PcUHy7sjAAAA=",
+      "backdropBlur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA8BgJaQAAueH+E4ZAAD++FCafUCZD8y+0/LKt+i0Rz0j9AO32sl0mLTMAAA="
+    },
+    "videos": [],
+    "seasons": [
+      {
+        "number": 1,
+        "episodes": [
+          {
+            "number": 85,
+            "title": "Videos for Hubble’s 25th Birthday",
+            "synopsis": "ESA/Hubble presents the two winning fan-made videos from a contest celebrating the telescope’s 25th anniversary, and talks to their creators.",
+            "runtimeMinutes": 10,
+            "still": "/media/stills/hubblecast-s1e85.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/99/Hubblecast_85.webm/Hubblecast_85.webm.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/99/Hubblecast_85.webm/Hubblecast_85.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/hubblecast-s1e85.webp",
+                "durationSeconds": 602,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          },
+          {
+            "number": 87,
+            "title": "Hubble and Pluto",
+            "synopsis": "What Hubble taught astronomers about Pluto before a space probe reached it, and what it can still add.",
+            "runtimeMinutes": 6,
+            "still": "/media/stills/hubblecast-s1e87.webp",
+            "videos": [
+              {
+                "kind": "episode",
+                "src": [
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bb/Hubblecast_87.webm/Hubblecast_87.webm.1080p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  },
+                  {
+                    "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bb/Hubblecast_87.webm/Hubblecast_87.webm.480p.vp9.webm",
+                    "type": "video/webm; codecs=\"vp9, opus\""
+                  }
+                ],
+                "poster": "/media/stills/hubblecast-s1e87.webp",
+                "durationSeconds": 342,
+                "captions": [],
+                "host": "wikimedia"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

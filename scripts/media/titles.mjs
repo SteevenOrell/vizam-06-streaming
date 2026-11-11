@@ -74,10 +74,9 @@ export const titles = [
       { number: 1, title: 'The Magic Bag', year: 1958, file: 'File:001-Felix-the-Cat-S01E01-The-Magic-Bag.webm', synopsis: 'Felix and his bag of tricks head into the first of his television adventures.' },
       { number: 6, title: 'Electronic Brainwasher', year: 1958, file: 'File:006-Felix-the-Cat-S01E06-Electronic-Brainwasher.webm', synopsis: 'The Professor builds a gadget that scrambles minds, and Felix has to outwit it with a trick from the bag.' } ] }] },
   { slug: 'hubblecast', type: 'series', title: 'Hubblecast', year: 2015, genres: ['Documentary', 'Science'],
-    synopsis: 'Short science programmes from the European Space Agency team that works with the Hubble Space Telescope. These three 2015 episodes cover a planetary nebula, Pluto and fan-made videos.',
+    synopsis: 'Short science programmes from the European Space Agency team that works with the Hubble Space Telescope. These two 2015 episodes cover fan-made videos for Hubble’s birthday and what Hubble taught us about Pluto.',
     tagline: 'The universe, explained in minutes.', credits: { directors: ['Mathias Jaeger'], cast: [], writers: ['Mathias Jaeger', 'Nicky Jenner', 'Georgia Bladon'] },
     seasons: [{ number: 1, episodes: [
       { number: 85, title: 'Videos for Hubble’s 25th Birthday', year: 2015, file: 'File:Hubblecast 85.webm', synopsis: 'ESA/Hubble presents the two winning fan-made videos from a contest celebrating the telescope’s 25th anniversary, and talks to their creators.' },
-      { number: 86, title: 'The Twin Jet Nebula', year: 2015, file: 'File:Hubblecast 86.webm', synopsis: 'A look at the glowing wings of the Twin Jet Nebula as seen by Hubble.' },
       { number: 87, title: 'Hubble and Pluto', year: 2015, file: 'File:Hubblecast 87.webm', synopsis: 'What Hubble taught astronomers about Pluto before a space probe reached it, and what it can still add.' } ] }] },
 ];
