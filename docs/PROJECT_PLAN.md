@@ -14,8 +14,8 @@ Approved decisions:
 
 ## Phases
 
-- [ ] 0. Setup and architecture (Opus): Next.js scaffold, tokens, brand, sitemap, Zod content schema, layout shell,
-      nav, footer, 250 px lock, test tooling, `docs/ARCHITECTURE.md`, `docs/design-direction.md`
+- [x] 0. Setup and architecture (Opus): Next.js scaffold, tokens, brand, sitemap, Zod content schema, layout shell,
+      nav, footer, 250 px lock, test tooling, `docs/ARCHITECTURE.md`, `docs/design-direction.md` (done 2026-11-11)
 - [ ] 1. Media library (Sonnet, runs in parallel with 0): curated titles, posters/stills, hero loops, licences,
       `content/media-library.json`
 - [ ] 2. Home, Movies, TV Shows (Sonnet)
