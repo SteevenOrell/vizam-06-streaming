@@ -2,6 +2,17 @@ import { z } from "zod";
 
 export type StorageLike = Pick<Storage, "getItem" | "setItem">;
 
+const NO_STORAGE: StorageLike = { getItem: () => null, setItem: () => {} };
+
+/** window.localStorage, or a no-op store when it is unavailable (SSR, blocked site data: accessing it can throw). */
+export function safeLocalStorage(): StorageLike {
+  try {
+    return typeof window === "undefined" ? NO_STORAGE : window.localStorage;
+  } catch {
+    return NO_STORAGE;
+  }
+}
+
 // ---------------------------------------------------------------------------------------------------------------
 // Resume positions: one entry per title (or per episode), newest kept, capped.
 // ---------------------------------------------------------------------------------------------------------------
@@ -29,7 +40,13 @@ export function parseResume(raw: string | null | undefined): ResumeMap {
 
 /** Saved position in seconds, or undefined when there is nothing worth resuming. */
 export function getResume(storage: StorageLike, key: string): number | undefined {
-  const entry = parseResume(storage.getItem(RESUME_KEY))[key];
+  let entry: ResumeMap[string] | undefined;
+  try {
+    const map = parseResume(storage.getItem(RESUME_KEY));
+    entry = Object.hasOwn(map, key) ? map[key] : undefined;
+  } catch {
+    return undefined;
+  }
   if (!entry) return undefined;
   if (entry.t < RESUME_MIN_SECONDS || entry.t > entry.d - RESUME_END_MARGIN) return undefined;
   return entry.t;

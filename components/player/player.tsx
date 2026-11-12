@@ -20,7 +20,7 @@ import { SeekBar } from "./seek-bar";
 import { PlayerMenu } from "./player-menu";
 import { mapKey, type PlayerAction } from "@/lib/player/keyboard";
 import { browserCanPlay, defaultDataSaver, orderSources } from "@/lib/player/sources";
-import { getResume, readPrefs, saveResume, writePrefs } from "@/lib/player/storage";
+import { getResume, readPrefs, safeLocalStorage, saveResume, writePrefs } from "@/lib/player/storage";
 import { clamp, formatTime } from "@/lib/player/time";
 import type { PlayerVideo } from "@/lib/content/watch";
 
@@ -102,13 +102,13 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
 
   // Mount: restore saved volume/mute, data-saver choice and resume position (client-only state).
   useEffect(() => {
-    const prefs = readPrefs(window.localStorage);
+    const prefs = readPrefs(safeLocalStorage());
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     /* eslint-disable react-hooks/set-state-in-effect */
     setVolumeState(prefs.volume);
     setMutedState(prefs.muted);
     setDataSaverState(prefs.dataSaver ?? defaultDataSaver({ saveData: Boolean(conn?.saveData), viewportWidth: window.innerWidth }));
-    setResumeAt(getResume(window.localStorage, resumeKey));
+    setResumeAt(getResume(safeLocalStorage(), resumeKey));
     /* eslint-enable react-hooks/set-state-in-effect */
     const v = videoRef.current;
     if (v) {
@@ -121,7 +121,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
   useEffect(() => {
     const v = videoRef.current;
     const save = () => {
-      if (v && startedRef.current) saveResume(window.localStorage, resumeKey, v.currentTime, v.duration || duration);
+      if (v && startedRef.current) saveResume(safeLocalStorage(), resumeKey, v.currentTime, v.duration || duration);
     };
     window.addEventListener("pagehide", save);
     return () => {
@@ -265,7 +265,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
       v.muted = next === 0;
       setVolumeState(next);
       setMutedState(next === 0);
-      writePrefs(window.localStorage, { volume: next, muted: next === 0 });
+      writePrefs(safeLocalStorage(), { volume: next, muted: next === 0 });
       say(`Volume ${Math.round(next * 100)}%`);
     },
     [say],
@@ -278,7 +278,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
     if (!v.muted && v.volume === 0) v.volume = 0.5;
     setMutedState(v.muted);
     setVolumeState(v.volume);
-    writePrefs(window.localStorage, { volume: v.volume, muted: v.muted });
+    writePrefs(safeLocalStorage(), { volume: v.volume, muted: v.muted });
     say(v.muted ? "Muted" : "Unmuted");
   }, [say]);
 
@@ -325,7 +325,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
       const next = !dataSaver;
       setDataSaverState(next);
       setAttempt(0);
-      writePrefs(window.localStorage, { dataSaver: next });
+      writePrefs(safeLocalStorage(), { dataSaver: next });
       say(next ? "Data saver on" : "Data saver off");
     });
   }, [dataSaver, say, switchSource]);
@@ -473,7 +473,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
           setPlaying(false);
           setActive(true);
           const v = videoRef.current;
-          if (v && startedRef.current) saveResume(window.localStorage, resumeKey, v.currentTime, v.duration || duration);
+          if (v && startedRef.current) saveResume(safeLocalStorage(), resumeKey, v.currentTime, v.duration || duration);
         }}
         onPlaying={() => setWaiting(false)}
         onCanPlay={() => setWaiting(false)}
@@ -494,7 +494,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
           const now = Date.now();
           if (startedRef.current && now - lastSave.current > SAVE_EVERY_MS) {
             lastSave.current = now;
-            saveResume(window.localStorage, resumeKey, v.currentTime, v.duration || duration);
+            saveResume(safeLocalStorage(), resumeKey, v.currentTime, v.duration || duration);
           }
         }}
         onVolumeChange={(e) => {
@@ -506,7 +506,7 @@ export function Player({ video, label, poster, resumeKey, detailsHref, sourceUrl
           setPlaying(false);
           setEnded(true);
           setActive(true);
-          saveResume(window.localStorage, resumeKey, duration, duration);
+          saveResume(safeLocalStorage(), resumeKey, duration, duration);
         }}
         onError={onError}
       >

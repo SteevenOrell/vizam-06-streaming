@@ -2,6 +2,7 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 import { z } from "zod";
+import { safeLocalStorage } from "@/lib/player/storage";
 
 /** My List: an array of title slugs in localStorage. Validated on every read; garbage is ignored, never trusted. */
 export const WATCHLIST_KEY = "afterlight:my-list";
@@ -57,7 +58,7 @@ let loaded = false;
 const listeners = new Set<() => void>();
 
 function load() {
-  snapshot = readWatchlist(window.localStorage);
+  snapshot = readWatchlist(safeLocalStorage());
   loaded = true;
 }
 
@@ -88,7 +89,7 @@ function getSnapshot() {
 
 function setList(next: string[]) {
   snapshot = next;
-  writeWatchlist(window.localStorage, next);
+  writeWatchlist(safeLocalStorage(), next);
   emit();
 }
 
