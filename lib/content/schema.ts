@@ -12,6 +12,9 @@
  */
 import { z } from "zod";
 
+// No JIT: Zod probes `new Function` once, which our CSP (no unsafe-eval) reports as a violation.
+z.config({ jitless: true });
+
 // ---------------------------------------------------------------------------------------------------------------
 // Primitives
 // ---------------------------------------------------------------------------------------------------------------
@@ -245,6 +248,8 @@ export const EditorialSchema = z.object({
   newBadgeCount: z.number().int().min(0).max(24).default(4),
   collections: z.array(CollectionSchema).default([]),
   genreBlurbs: z.record(z.string(), z.string()).default({}),
+  /** Optional tile image per genre slug (overrides the representative title backdrop, e.g. when it is too dark). */
+  genreImages: z.record(z.string(), z.object({ src: LocalImageSchema, blur: BlurDataUriSchema.optional() })).default({}),
 });
 
 // ---------------------------------------------------------------------------------------------------------------

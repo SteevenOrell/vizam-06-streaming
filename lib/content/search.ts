@@ -1,5 +1,8 @@
 /** Pure search logic (no catalog import: safe for client components). Ranking is simple and explainable. */
 import { z } from "zod";
+
+// No JIT: Zod probes `new Function` once, which our CSP (no unsafe-eval) reports as a violation.
+z.config({ jitless: true });
 import type { CardData } from "./card";
 
 export const MAX_QUERY_LENGTH = 80;

@@ -2,6 +2,9 @@
 
 import { useCallback, useSyncExternalStore } from "react";
 import { z } from "zod";
+
+// No JIT: Zod probes `new Function` once, which our CSP (no unsafe-eval) reports as a violation.
+z.config({ jitless: true });
 import { safeLocalStorage } from "@/lib/player/storage";
 
 /** My List: an array of title slugs in localStorage. Validated on every read; garbage is ignored, never trusted. */

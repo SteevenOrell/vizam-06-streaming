@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+// No JIT: Zod probes `new Function` once, which our CSP (no unsafe-eval) reports as a violation.
+z.config({ jitless: true });
+
 export type StorageLike = Pick<Storage, "getItem" | "setItem">;
 
 const NO_STORAGE: StorageLike = { getItem: () => null, setItem: () => {} };
