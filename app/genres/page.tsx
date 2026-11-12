@@ -37,7 +37,7 @@ export default function GenresPage() {
         Pick a mood. Every genre in the library, with every film and series filed under it.
       </PageIntro>
       <ul aria-label="Genres" className="wrap grid gap-4 py-6 sm:grid-cols-2 lg:grid-cols-3">
-        {tiles.map(({ genre, front, kinds }) => (
+        {tiles.map(({ genre, front, kinds }, i) => (
           <li key={genre.slug} id={genre.slug} className="scroll-mt-24">
             <Link
               href={routes.genre(genre.slug)}
@@ -49,6 +49,7 @@ export default function GenresPage() {
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
+                  priority={i === 0}
                   blur={genre.image ? genre.image.blur : front!.images.backdropBlur}
                   className="object-cover opacity-75 m-zoom group-hover/tile:scale-105 group-hover/tile:opacity-95"
                 />

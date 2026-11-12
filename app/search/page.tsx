@@ -26,7 +26,15 @@ export default function SearchPage() {
   return (
     <>
       <PageIntro eyebrow="Find something to watch" title="Search" />
-      <Suspense fallback={<p className="wrap text-bone-400">Loading search...</p>}>
+      {/* Fallback keeps the input's footprint and pushes the footer below the fold, so hydration causes no layout shift. */}
+      <Suspense
+        fallback={
+          <div className="wrap min-h-[100svh]">
+            <div className="h-14 max-w-2xl rounded-full bg-ink-850 ring-1 ring-inset ring-white/10" />
+            <p className="mt-6 text-bone-400">Loading search...</p>
+          </div>
+        }
+      >
         <SearchClient entries={entries} genres={genres} trending={trending} />
       </Suspense>
     </>
