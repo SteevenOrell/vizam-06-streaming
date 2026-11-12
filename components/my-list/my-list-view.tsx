@@ -130,7 +130,7 @@ export function MyListView({ cards }: { cards: CardData[] }) {
         </>
       )}
 
-      <div aria-live="polite" className="pointer-events-none fixed inset-x-0 bottom-4 z-40 flex justify-center px-4" data-testid="undo-region">
+      <div aria-live="polite" className="fixed-lock pointer-events-none fixed inset-x-0 bottom-4 z-40 flex justify-center px-4" data-testid="undo-region">
         {undo ? (
           <div role="status" className="pointer-events-auto flex max-w-full items-center gap-3 rounded-full bg-ink-800 py-1.5 pl-5 pr-2 text-sm text-bone-50 shadow-card ring-1 ring-inset ring-white/15">
             <span className="min-w-0 truncate">{"cleared" in undo ? `Cleared ${plural(undo.cleared.length, "title")}` : `Removed ${undo.title}`}</span>
