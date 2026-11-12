@@ -92,8 +92,8 @@ video `src` entries are local `/media/...` paths (hero loops) or `https://` URLs
 - States: loading/buffering spinner, error (source failed: try next source, then show "Open on <host>" link), ended
   (next episode / related).
 - Hosting: hero loops (10-20 s, muted, MP4 + WebM + WebP poster, < ~4 MB) live in `public/media/hero/`. Trailers and
-  full shorts stream from official open hosts. CSP `media-src` allows: `upload.wikimedia.org`, `commons.wikimedia.org`,
-  `archive.org`, `*.archive.org`, `download.blender.org`, `video.blender.org` (`next.config.ts`, keep in sync).
+  full shorts stream from official open hosts. CSP `media-src` allows only the hosts the catalog uses (now
+  `upload.wikimedia.org`; `MEDIA_HOSTS` in `next.config.ts`, enforced by `tests/unit/csp.test.ts`).
 - Hero video gating: `useCanAutoplayVideo()` is false for reduced motion or Save-Data (and before hydration), so the
   WebP poster shows instead.
 

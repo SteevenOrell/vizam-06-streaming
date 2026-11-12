@@ -63,7 +63,7 @@ test("security headers on a production response", async ({ request }) => {
   expect(csp).toContain("base-uri 'self'");
   expect(csp).toMatch(/media-src 'self' https:\/\/upload\.wikimedia\.org(;|$)/);
   expect(csp).toMatch(/connect-src 'self'(;|$)/);
-  expect(csp).toMatch(/img-src 'self' data: blob:(;|$)/);
+  expect(csp).toMatch(/img-src 'self' data:(;|$)/);
   expect(csp).not.toContain("unsafe-eval");
   expect(h["x-frame-options"]).toBe("DENY");
   expect(h["x-content-type-options"]).toBe("nosniff");

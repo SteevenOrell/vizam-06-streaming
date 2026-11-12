@@ -3,7 +3,8 @@ export const site = {
   tagline: "Open cinema after dark",
   description:
     "AFTERLIGHT is a fictional streaming and film-discovery concept by VIZAM, built around Creative Commons and public-domain films.",
-  url: process.env.SITE_URL ?? "http://localhost:3061",
+  // SITE_URL wins; on Vercel fall back to the production domain so sitemap/robots/canonical never point at localhost.
+  url: (process.env.SITE_URL ?? (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3061")).replace(/\/$/, ""),
   studio: "VIZAM",
 } as const;
 
