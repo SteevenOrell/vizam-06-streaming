@@ -24,7 +24,7 @@ Approved decisions:
 - [x] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)
 - [x] 5. Motion and polish (Sonnet)
 - [x] 6. QA and security: Vitest, Playwright + axe, quality gate, content QA, audit, security review (Opus) (done 2026-11-12; docs/TEST_RESULTS.md, docs/SECURITY_REVIEW.md)
-- [ ] 7. Delivery: README, deployment instructions, portfolio screenshots, handoff, retro (Sonnet + main)
+- [x] 7. Delivery: README, deployment instructions, portfolio screenshots, handoff, retro (Sonnet + main)
 - [ ] UI/UX review gate: screenshots at 240/390/768/1440 px to Steeven before any push
 
 ## Blocked / open

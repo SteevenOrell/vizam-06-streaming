@@ -1,6 +1,6 @@
 # Agent handoff: AFTERLIGHT (vizam-06-streaming)
 
-_Last updated: 2026-11-12 by the Phase 6 agent (QA and security)_
+_Last updated: 2026-11-12 by the Phase 7 agent (delivery)_
 
 ## Objective
 Build AFTERLIGHT, a fictional premium streaming and film-discovery site (VIZAM portfolio concept) around Creative
@@ -111,10 +111,9 @@ placeholders.
 - metaDescription() in lib/format.ts for details pages; search Suspense fallback reserves space (CLS); first /genres tile priority.
 
 ## Pending
-0. Phase 7 (delivery, Sonnet): README, deployment notes (set SITE_URL or rely on VERCEL_PROJECT_PRODUCTION_URL), portfolio screenshots, retro. UI/UX review gate before any push. Open media item: tears-of-steel hero loop subtitles (item 4 below). Optional: higher-resolution posters for the SD archival films (Caligari 300 px, Nosferatu/NOTLD/Trip to the Moon/Felix/Superman 400 px).
+0. Phase 7 is done (see below). Optional: higher-resolution posters for the SD archival films (Caligari 300 px, Nosferatu/NOTLD/Trip to the Moon/Felix/Superman 400 px).
 1. Phase 4: see below. Series from the media agent are untested on real data (only the sample series); check `/tv/<slug>` and `/watch/<slug>?s=&e=` once they land.
 3. Phase 5-7 per PROJECT_PLAN.md. UI/UX review gate before any push.
-4. Hero loop fix for the media agent: tears-of-steel loop has burned-in subtitle text around 2.5-5 s; re-cut to the sunset/rooftop shots (loop time ~7-13 s) or another segment without subtitles.
 
 ## Last verified checks
 2026-11-12 (Phase 6): see docs/TEST_RESULTS.md for every command, count and kept WARN.
@@ -130,8 +129,15 @@ placeholders.
 - Env var names: `TMDB_API_KEY` (optional, server-only, `.env.local`), `SITE_URL` (optional, metadata base),
   `CATALOG_SOURCE=sample` (optional).
 
-## Next step
-Phase 7 delivery (Sonnet): README + deployment notes + portfolio screenshots + retro, then the UI/UX review gate for Steeven.
+## Done (Phase 7: delivery, 2026-11-12)
+- README.md, docs/DEPLOYMENT.md, docs/CASE_STUDY.md. Portfolio screenshots (1440 and 390, 8 screens each) in docs/portfolio/; review-gate screenshots (home and Sintel details at 240/390/768/1440) in docs/screenshots/review-gate/. Script: scripts/screenshots-phase7.mjs (needs a production server, E2E_PORT).
+- Seen in screenshots, minor: at 390 px the home hero meta row wraps ("Animation Fantasy Adventure" on a second line); the watch screenshot uses the mocked short clip.
+- Not deployed, nothing pushed. Retro (vizam-project-retro) not yet run.
+
+## Next steps
+1. Steeven: UI/UX review of docs/screenshots/review-gate/ and the live app (review gate, unticked in PROJECT_PLAN.md).
+2. On approval: create public GitHub repo vizam-06-streaming, push vizam/initial-build, open a Vercel preview (docs/DEPLOYMENT.md), send the phone checklist.
+3. Run vizam-project-retro; optionally refresh SD poster sources.
 
 ## Waiting for approval
-- None for Phase 2. Video/voice generation and pushes still need Steeven's yes.
+- Push, repo creation and deploy need Steeven. Video/voice generation not requested.
