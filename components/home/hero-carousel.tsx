@@ -108,7 +108,7 @@ export function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
             className={`absolute inset-0 transition-opacity ease-cinema ${isActive ? "hero-live z-10 opacity-100" : "z-0 opacity-0"}`}
           >
             <div className="hero-bg absolute inset-0">
-              <FadeImage src={s.backdrop} alt="" fill priority={i === 0} loading={i === 0 ? undefined : "lazy"} sizes="100vw" blur={s.backdropBlur} className="object-cover" />
+              <FadeImage src={s.backdrop} alt="" fill priority={i === 0} loading={i === 0 ? undefined : "lazy"} sizes="(max-width: 1472px) 1472px, 100vw" blur={s.backdropBlur} className="object-cover" />
             </div>
             {isActive && s.loop && !failed[s.slug] && canAutoplay ? (
               <video

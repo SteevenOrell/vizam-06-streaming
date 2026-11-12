@@ -1,0 +1,611 @@
+{
+  "date": "2026-11-12T10:06:55.853Z",
+  "routes": [
+    "/",
+    "/movies",
+    "/tv",
+    "/genres",
+    "/genres/drama",
+    "/trending",
+    "/search?q=moon",
+    "/my-list",
+    "/about",
+    "/movies/sintel",
+    "/movies/the-general",
+    "/tv/hubblecast",
+    "/watch/sintel",
+    "/watch/caminandes?s=1&e=1"
+  ],
+  "issues": [
+    {
+      "route": "/",
+      "level": "FAIL",
+      "msg": "no visible <h1>"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 1472px wide for a 1440px slot (1.02x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: tears-of-steel.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: big-buck-bunny.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): night-of-the-living-dead.webp is 144px wide but shown 209px wide — replace it with a larger original"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: spring.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 4 times on this page: sintel.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 6 times on this page: tears-of-steel.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 5 times on this page: elephants-dream.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 4 times on this page: big-buck-bunny.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 4 times on this page: night-of-the-living-dead.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 5 times on this page: spring.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 4 times on this page: the-general.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 5 times on this page: cosmos-laundromat.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 4 times on this page: wing-it.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 5 times on this page: charge.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 5 times on this page: sprite-fright.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 3 times on this page: hubblecast.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 3 times on this page: his-girl-friday.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: felix-the-cat-1958.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: fleischer-superman.webp"
+    },
+    {
+      "route": "/",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: caminandes.webp"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: wing-it.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: charge.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sprite-fright.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: spring.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: cosmos-laundromat.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: tears-of-steel.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: big-buck-bunny.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: elephants-dream.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): night-of-the-living-dead.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: charade.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: his-girl-friday.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: the-general.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): nosferatu.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): the-cabinet-of-dr-caligari.webp is 108px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): a-trip-to-the-moon.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/tv",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: caminandes.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): felix-the-cat-1958.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/tv",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): fleischer-superman.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/genres/drama",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: cosmos-laundromat.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/genres/drama",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: tears-of-steel.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/genres/drama",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: his-girl-friday.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/genres/drama",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: the-general.webp is 216px wide for a 207px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/genres/drama",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): nosferatu.webp is 144px wide but shown 207px wide — replace it with a larger original"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: tears-of-steel.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: big-buck-bunny.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: night-of-the-living-dead.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: spring.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: elephants-dream.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: the-general.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: cosmos-laundromat.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: wing-it.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: charge.webp is 172px wide for a 156px slot (1.1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sprite-fright.webp is 345px wide for a 331px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: his-girl-friday.webp is 345px wide for a 331px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast.webp is 345px wide for a 331px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: felix-the-cat-1958.webp is 345px wide for a 331px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/trending",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: fleischer-superman.webp is 345px wide for a 331px slot (1.04x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/search?q=moon",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): a-trip-to-the-moon.webp is 800px wide but shown 1325px wide — replace it with a larger original"
+    },
+    {
+      "route": "/about",
+      "level": "WARN",
+      "msg": "possible placeholder wording (placeholder / example.com / coming soon / [name]) — confirm it is intentional demo content"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "1 text element(s) under 12px"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 1440px wide for a 1440px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sintel.webp is 224px wide for a 224px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: spring.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: wing-it.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: cosmos-laundromat.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: elephants-dream.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): a-trip-to-the-moon.webp is 144px wide but shown 209px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): felix-the-cat-1958.webp is 144px wide but shown 209px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: charge.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/sintel",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: sintel.webp"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "1 text element(s) under 12px"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: the-general.webp is 1440px wide for a 1440px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: the-general.webp is 224px wide for a 224px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: wing-it.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: his-girl-friday.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "FAIL",
+      "msg": "soft image (upscaled): felix-the-cat-1958.webp is 144px wide but shown 209px wide — replace it with a larger original"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: sprite-fright.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: spring.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: cosmos-laundromat.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: tears-of-steel.webp is 216px wide for a 209px slot (1.03x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/movies/the-general",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: the-general.webp"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "1 text element(s) under 12px"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast.webp is 1440px wide for a 1440px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast.webp is 224px wide for a 224px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast-s1e85.webp is 208px wide for a 208px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: hubblecast-s1e87.webp is 208px wide for a 208px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/tv/hubblecast",
+      "level": "WARN",
+      "msg": "same image used 2 times on this page: hubblecast.webp"
+    },
+    {
+      "route": "/watch/sintel",
+      "level": "FAIL",
+      "msg": "no visible <h1>"
+    },
+    {
+      "route": "/watch/caminandes?s=1&e=1",
+      "level": "FAIL",
+      "msg": "no visible <h1>"
+    },
+    {
+      "route": "/watch/caminandes?s=1&e=1",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: caminandes-s1e1.webp is 208px wide for a 208px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/watch/caminandes?s=1&e=1",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: caminandes-s1e2.webp is 208px wide for a 208px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/watch/caminandes?s=1&e=1",
+      "level": "WARN",
+      "msg": "slightly soft on retina screens: caminandes-s1e3.webp is 208px wide for a 208px slot (1x; 1.5x or more is sharp)"
+    },
+    {
+      "route": "/, /movies/sintel, /watch/sintel",
+      "level": "WARN",
+      "msg": "same paragraph on 3 pages: \"A lone warrior befriends a wounded young dragon, loses it, a...\""
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 6 pages (vary the photography): sintel.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /genres/drama",
+      "level": "WARN",
+      "msg": "same image on 6 pages (vary the photography): tears-of-steel.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 5 pages (vary the photography): elephants-dream.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 6 pages (vary the photography): big-buck-bunny.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 4 pages (vary the photography): night-of-the-living-dead.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 6 pages (vary the photography): spring.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /genres/drama",
+      "level": "WARN",
+      "msg": "same image on 7 pages (vary the photography): the-general.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /genres/drama",
+      "level": "WARN",
+      "msg": "same image on 7 pages (vary the photography): cosmos-laundromat.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 6 pages (vary the photography): wing-it.webp"
+    },
+    {
+      "route": "/, /movies, /genres, /trending",
+      "level": "WARN",
+      "msg": "same image on 5 pages (vary the photography): charge.webp"
+    },
+    {
+      "route": "/, /movies, /trending, /movies/sintel",
+      "level": "WARN",
+      "msg": "same image on 5 pages (vary the photography): sprite-fright.webp"
+    },
+    {
+      "route": "/, /tv, /trending, /tv/hubblecast",
+      "level": "WARN",
+      "msg": "same image on 4 pages (vary the photography): hubblecast.webp"
+    },
+    {
+      "route": "/, /movies, /genres/drama, /trending",
+      "level": "WARN",
+      "msg": "same image on 5 pages (vary the photography): his-girl-friday.webp"
+    },
+    {
+      "route": "/, /tv, /trending, /movies/sintel",
+      "level": "WARN",
+      "msg": "same image on 5 pages (vary the photography): felix-the-cat-1958.webp"
+    },
+    {
+      "route": "/, /tv, /trending",
+      "level": "WARN",
+      "msg": "same image on 3 pages (vary the photography): fleischer-superman.webp"
+    },
+    {
+      "route": "/, /tv, /trending",
+      "level": "WARN",
+      "msg": "same image on 3 pages (vary the photography): caminandes.webp"
+    },
+    {
+      "route": "/movies, /genres, /trending, /movies/the-general",
+      "level": "WARN",
+      "msg": "same image on 4 pages (vary the photography): charade.webp"
+    },
+    {
+      "route": "/movies, /genres/drama, /trending",
+      "level": "WARN",
+      "msg": "same image on 3 pages (vary the photography): nosferatu.webp"
+    },
+    {
+      "route": "/movies, /trending, /search?q=moon, /movies/sintel",
+      "level": "WARN",
+      "msg": "same image on 4 pages (vary the photography): a-trip-to-the-moon.webp"
+    }
+  ]
+}

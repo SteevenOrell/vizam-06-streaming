@@ -80,11 +80,11 @@ export default function HomePage() {
                   className="group/tile relative block aspect-[16/10] overflow-hidden rounded-card bg-ink-850 ring-1 ring-inset ring-white/8 outline-offset-4"
                 >
                   <FadeImage
-                    src={front.images.backdrop}
+                    src={genre.image?.src ?? front.images.backdrop}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 15vw, (min-width: 640px) 30vw, 46vw"
-                    blur={front.images.backdropBlur}
+                    blur={genre.image ? genre.image.blur : front.images.backdropBlur}
                     className="object-cover opacity-70 m-zoom group-hover/tile:scale-105 group-hover/tile:opacity-90"
                   />
                   <span aria-hidden="true" className="absolute inset-0 bg-[image:var(--scrim-card)]" />

@@ -65,7 +65,7 @@ export function normaliseCatalog(file: CatalogFile): Catalog {
     for (const g of t.genres) {
       const existing = genreMap.get(g.slug);
       if (existing) existing.count += 1;
-      else genreMap.set(g.slug, { ...g, count: 1, blurb: file.editorial.genreBlurbs[g.slug] });
+      else genreMap.set(g.slug, { ...g, count: 1, blurb: file.editorial.genreBlurbs[g.slug], image: file.editorial.genreImages[g.slug] });
     }
   }
   const genres = [...genreMap.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));

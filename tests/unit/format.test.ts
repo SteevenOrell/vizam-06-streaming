@@ -12,3 +12,13 @@ describe("publicModifications", () => {
     expect(publicModifications("  ")).toBeUndefined();
   });
 });
+
+describe("metaDescription", () => {
+  it("joins tagline and synopsis and cuts at a word boundary", async () => {
+    const { metaDescription } = await import("@/lib/format");
+    expect(metaDescription({ title: "X", year: 2000, tagline: "Short.", synopsis: "A film." })).toBe("Short. A film.");
+    const long = metaDescription({ title: "X", year: 2000, synopsis: "word ".repeat(60) });
+    expect(long.length).toBeLessThanOrEqual(155);
+    expect(long.endsWith("word…")).toBe(true);
+  });
+});

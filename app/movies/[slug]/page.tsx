@@ -1,3 +1,4 @@
+import { metaDescription } from "@/lib/format";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { TitleDetails } from "@/components/title/title-details";
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: PageProps<"/movies/[slug]">):
   if (!title || title.type !== "movie") return {};
   return {
     title: `${title.title} (${title.year})`,
-    description: title.tagline ?? title.synopsis.slice(0, 155),
+    description: metaDescription(title),
     openGraph: { images: [{ url: title.images.backdrop }] },
   };
 }

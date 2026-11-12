@@ -37,5 +37,9 @@
       "layout": "landscape"
     }
   ],
-  "genreBlurbs": {}
+  "genreBlurbs": {},
+  "genreImages": {
+    "science": { "src": "/media/stills/hubblecast-andromeda.webp", "blur": "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAADwAQCdASoQAAkAA8BgJQBOgCKQ5eKrFAAA/ni+76Cfqo6KVcXwprF8O6mcgAAA" },
+    "documentary": { "src": "/media/stills/hubblecast-starry-night.webp", "blur": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADwAQCdASoQAAkAA8BgJZwAAp/blD89lyAA/u9uFfOlrvjWg6tT50A8AAA=" }
+  }
 }

@@ -21,3 +21,11 @@ export function publicModifications(text: string | undefined): string | undefine
     .trim();
   return cleaned || undefined;
 }
+
+/** Meta description for a title: tagline + synopsis, cut at a word boundary (max 155 characters). */
+export function metaDescription(t: { tagline?: string; synopsis: string; title: string; year: number }): string {
+  const full = [t.tagline, t.synopsis].filter(Boolean).join(" ").replace(/\s+/g, " ").trim() || `${t.title} (${t.year})`;
+  if (full.length <= 155) return full;
+  const cut = full.slice(0, 154);
+  return `${cut.slice(0, Math.max(cut.lastIndexOf(" "), 120)).replace(/[\s,.;:]+$/, "")}…`;
+}

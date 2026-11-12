@@ -41,6 +41,10 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     qualities: [60, 75, 85],
+    // 600 = native width of most posters: lets the browser pick the file at its real size instead of asking for 640
+    imageSizes: [32, 48, 64, 96, 128, 256, 384, 600],
+    // No source image is wider than 1920 px; larger candidates would only make the browser assume detail that is not there.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
   turbopack: {
     rules: {

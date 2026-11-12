@@ -43,13 +43,13 @@ export default function GenresPage() {
               href={routes.genre(genre.slug)}
               className="group/tile relative block aspect-[16/9] overflow-hidden rounded-panel bg-ink-850 ring-1 ring-inset ring-white/8 outline-offset-4"
             >
-              {front ? (
+              {genre.image || front ? (
                 <FadeImage
-                  src={front.images.backdrop}
+                  src={genre.image?.src ?? front!.images.backdrop}
                   alt=""
                   fill
                   sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw"
-                  blur={front.images.backdropBlur}
+                  blur={genre.image ? genre.image.blur : front!.images.backdropBlur}
                   className="object-cover opacity-75 m-zoom group-hover/tile:scale-105 group-hover/tile:opacity-95"
                 />
               ) : null}

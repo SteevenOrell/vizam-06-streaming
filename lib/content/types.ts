@@ -6,7 +6,7 @@ export type Person = { name: string; slug: string; role?: string };
 
 export type GenreRef = { slug: string; name: string };
 
-export type Genre = GenreRef & { count: number; blurb?: string };
+export type Genre = GenreRef & { count: number; blurb?: string; image?: { src: string; blur?: string } };
 
 /** A licence entry as listed on /about#licences. */
 export type LicenceEntry = Licence & { id: string; titleSlug: string; titleName: string };

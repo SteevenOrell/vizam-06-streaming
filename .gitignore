@@ -49,3 +49,7 @@ yarn-error.log*
 CLAUDE.md
 AGENTS.md
 /.next-*/
+
+# QA run artefacts (reports are committed, screenshots are not)
+/docs/qa/content/shots/
+/docs/qa/content/sheets/

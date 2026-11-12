@@ -939,8 +939,8 @@
     "images": {
       "poster": "/media/posters/the-general.webp",
       "backdrop": "/media/backdrops/the-general.webp",
-      "posterBlur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJZQC7ABuVINzwKrGAgAD+1et0YFBHY7BIXMHQ0k6EpY0AyKkrSPf4pi7rX9H7LOpwxaPN71YIKvG3j5b3aA5QAAA=",
-      "backdropBlur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA8BgJYwCdAEVE+3mAADMo0OvnpZi3Ad1hCfhm1YVsKL1ATmr92hyQ6CDWzwyLrCYAAA="
+      "posterBlur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoMABIAPwFqrE6rJiQiMAgBYCAJZQCw7CKe6tykjZl5bHXgAP66dUfcu3+0rPcElM8LeHMldly4IaWlhVOmTSa9NzAM1iD7oN+YAAAA",
+      "backdropBlur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA8BgJYwCdAEKmG5CC3AA/uScyyU43dz9I35wmPCqfQT0uU9lP4qRVB8Wg9fOAAAA"
     },
     "videos": [
       {
@@ -1695,7 +1695,11 @@
       "poster": "/media/posters/hubblecast.webp",
       "backdrop": "/media/backdrops/hubblecast.webp",
       "posterBlur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAABQAwCdASoMABIAPwFqrU8rJaQiMAgBYCAJaQAAW/CfgDTwAAD+8qk2Ba6ICElndO0vO/8EGQQ8fO7PcUHy7sjAAAA=",
-      "backdropBlur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA8BgJaQAAueH+E4ZAAD++FCafUCZD8y+0/LKt+i0Rz0j9AO32sl0mLTMAAA="
+      "backdropBlur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA8BgJaQAAueH+E4ZAAD++FCafUCZD8y+0/LKt+i0Rz0j9AO32sl0mLTMAAA=",
+      "stills": [
+        "/media/stills/hubblecast-andromeda.webp",
+        "/media/stills/hubblecast-starry-night.webp"
+      ]
     },
     "videos": [],
     "seasons": [
