@@ -1,6 +1,6 @@
 # Agent handoff: AFTERLIGHT (vizam-06-streaming)
 
-_Last updated: 2026-11-11 by the Phase 5 agent_
+_Last updated: 2026-11-12 by the Phase 6 agent (QA and security)_
 
 ## Objective
 Build AFTERLIGHT, a fictional premium streaming and film-discovery site (VIZAM portfolio concept) around Creative
@@ -100,15 +100,24 @@ placeholders.
 - Real series: tests/e2e/series.real.spec.ts covers all 4 (details, stills load, play link, playback with mocked Wikimedia). All pass.
 - Screenshots: docs/screenshots/phase5/ (scripts/screenshots-phase5.mjs; adds a synthetic long cue because the mocked clip is shorter than the film).
 
+## Done (Phase 6: QA and security, 2026-11-12)
+- Results: docs/TEST_RESULTS.md. Security: docs/SECURITY_REVIEW.md. Gate report docs/qa/gate-report.md, content report docs/qa/content/content-report.md (sheets/shots git-ignored).
+- CSP: media-src only https://upload.wikimedia.org (MEDIA_HOSTS exported from next.config.ts, enforced by tests/unit/csp.test.ts; add a host there when the catalog streams from a new one); img-src 'self' data:; Zod jitless (z.config in schema/search/storage/watchlist) so no eval probe violates CSP.
+- safeLocalStorage() in lib/player/storage.ts: use it instead of window.localStorage.
+- lib/site.ts falls back to VERCEL_PROJECT_PRODUCTION_URL when SITE_URL is unset.
+- next.config images: imageSizes adds 600, deviceSizes capped at 1920 (no source is larger). Hero sizes "(max-width: 1472px) 1472px, 100vw" (cover crop on tall boxes).
+- editorial.json genreImages (slug -> {src, blur}) overrides a genre tile image; Science/Documentary use Hubblecast ep. 85 frames. The General poster/backdrop re-picked at 16:00 (media-work/picks.json t=960). Ep. 85 still re-cut at 2:30.
+- tests/e2e/phase6.spec.ts: axe (wcag2a/aa/21aa/22aa) + CSP/console on 14 route types at 390 and 1440, headers, JSON-LD, external links, hero gating under reduced motion and Save-Data, keyboard (skip link, mobile menu, search, player shortcuts).
+- metaDescription() in lib/format.ts for details pages; search Suspense fallback reserves space (CLS); first /genres tile priority.
+
 ## Pending
-0. Phase 6 (QA/security, Opus) and 7 (delivery). Open: Drama/"The General" backdrop and poster show a burned-in "W" watermark fragment at the lower right (media agent); Hubblecast/documentary genre tiles are very dark; tears-of-steel hero loop subtitles (item 4 below).
+0. Phase 7 (delivery, Sonnet): README, deployment notes (set SITE_URL or rely on VERCEL_PROJECT_PRODUCTION_URL), portfolio screenshots, retro. UI/UX review gate before any push. Open media item: tears-of-steel hero loop subtitles (item 4 below). Optional: higher-resolution posters for the SD archival films (Caligari 300 px, Nosferatu/NOTLD/Trip to the Moon/Felix/Superman 400 px).
 1. Phase 4: see below. Series from the media agent are untested on real data (only the sample series); check `/tv/<slug>` and `/watch/<slug>?s=&e=` once they land.
 3. Phase 5-7 per PROJECT_PLAN.md. UI/UX review gate before any push.
 4. Hero loop fix for the media agent: tears-of-steel loop has burned-in subtitle text around 2.5-5 s; re-cut to the sunset/rooftop shots (loop time ~7-13 s) or another segment without subtitles.
 
 ## Last verified checks
-See the Phase 0 report in this file's git history; rerun before trusting. All of lint (0 errors), typecheck, unit
-tests, build, e2e smoke (5 tests incl. axe, 390 px no overflow, 240 px lock) and `npm audit` (0) passed on 2026-11-11.
+2026-11-12 (Phase 6): see docs/TEST_RESULTS.md for every command, count and kept WARN.
 
 ## Known issues and risks
 - Lint warning (not an error) in `scripts/media/frames.mjs` (media agent's file): unused `e`.
@@ -122,7 +131,7 @@ tests, build, e2e smoke (5 tests incl. axe, 390 px no overflow, 240 px lock) and
   `CATALOG_SOURCE=sample` (optional).
 
 ## Next step
-Phase 4 (Sonnet). Known: `tests/unit/tmdb.test.ts` 'no key' test failed in my last run (Phase 4 work in progress by another agent, not Phase 3).
+Phase 7 delivery (Sonnet): README + deployment notes + portfolio screenshots + retro, then the UI/UX review gate for Steeven.
 
 ## Waiting for approval
 - None for Phase 2. Video/voice generation and pushes still need Steeven's yes.
