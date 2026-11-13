@@ -75,7 +75,7 @@ export function RuntimeList({ id, eyebrow, title, description, titles, scaleMinu
                 <span className="min-w-0">
                   <span className="flex items-baseline justify-between gap-3">
                     <span className="min-w-0">
-                      <span className="line-clamp-2 block font-bold leading-snug text-bone-50">
+                      <span className="line-clamp-2 font-bold leading-snug text-bone-50">
                         <span className="sr-only">{i + 1}. </span>
                         {t.title}
                       </span>
