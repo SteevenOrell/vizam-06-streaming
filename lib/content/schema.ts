@@ -231,7 +231,8 @@ export const CollectionSchema = z.object({
   description: z.string().optional(),
   /** Title slugs in display order; unknown slugs are dropped by the loader. */
   titles: z.array(SlugSchema),
-  layout: z.enum(["poster", "landscape"]).default("poster"),
+  /** "runtime" renders a shortest-first list with runtime bars instead of a rail. */
+  layout: z.enum(["poster", "landscape", "runtime"]).default("poster"),
 });
 
 export const EditorialSchema = z.object({

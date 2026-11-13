@@ -34,7 +34,7 @@
       "title": "Short & sweet: under 15 minutes",
       "description": "Finished before the kettle boils.",
       "titles": ["charge", "wing-it", "spring", "sprite-fright", "big-buck-bunny", "elephants-dream", "tears-of-steel", "cosmos-laundromat"],
-      "layout": "landscape"
+      "layout": "runtime"
     }
   ],
   "genreBlurbs": {},

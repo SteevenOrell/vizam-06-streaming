@@ -1,6 +1,7 @@
 import { FadeImage } from "@/components/ui/fade-image";
 import Link from "next/link";
 import { HeroCarousel, type HeroSlide } from "@/components/home/hero-carousel";
+import { RuntimeList } from "@/components/home/runtime-list";
 import { Rail } from "@/components/ui/rail";
 import { SectionHeader } from "@/components/ui/section-header";
 import { TitleCard } from "@/components/ui/title-card";
@@ -99,13 +100,25 @@ export default function HomePage() {
         </section>
       ) : null}
 
-      {collections.map((c) => (
-        <Rail key={c.slug} id={`rail-${c.slug}`} eyebrow={c.eyebrow} title={c.title} variant={c.layout}>
-          {toCards(c.titles).map((t) => (
-            <TitleCard key={t.slug} title={t} variant={c.layout} />
-          ))}
-        </Rail>
-      ))}
+      {collections.map((c) => {
+        const layout = c.layout;
+        return layout === "runtime" ? (
+          <RuntimeList
+            key={c.slug}
+            id={`list-${c.slug}`}
+            eyebrow={c.eyebrow}
+            title={c.title}
+            description={c.description}
+            titles={toCards(c.titles)}
+          />
+        ) : (
+          <Rail key={c.slug} id={`rail-${c.slug}`} eyebrow={c.eyebrow} title={c.title} variant={layout}>
+            {toCards(c.titles).map((t) => (
+              <TitleCard key={t.slug} title={t} variant={layout} />
+            ))}
+          </Rail>
+        );
+      })}
 
       {series.length > 0 ? (
         <Rail id="rail-series" eyebrow="Episodic" title="Series" seeAllHref="/tv" variant="landscape">

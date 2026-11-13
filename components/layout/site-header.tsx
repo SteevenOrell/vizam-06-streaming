@@ -37,7 +37,7 @@ export function SiteHeader() {
 
   const close = useCallback(() => {
     setOpen(false);
-    toggleRef.current?.focus();
+    toggleRef.current?.focus({ preventScroll: true });
   }, []);
 
   // Focus trap, Escape and scroll lock while the mobile menu is open.
@@ -45,9 +45,22 @@ export function SiteHeader() {
     if (!open) return;
     const panel = panelRef.current;
     const first = panel?.querySelector<HTMLElement>(FOCUSABLE);
-    first?.focus();
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    // preventScroll: focusing into the panel otherwise scrolled the page underneath the menu.
+    first?.focus({ preventScroll: true });
+    // Lock scrolling on <html>, not <body>: overflow:hidden on body turns it into its own scroll container, which
+    // detached the sticky header and let the page scroll (and jump to the top on close) behind the open menu.
+    const root = document.documentElement;
+    const scrollY = window.scrollY;
+    const prev = { overflow: root.style.overflow, overscroll: root.style.overscrollBehavior, gutter: root.style.scrollbarGutter };
+    root.style.scrollbarGutter = "stable";
+    root.style.overflow = "hidden";
+    root.style.overscrollBehavior = "none";
+    // iOS Safari can still rubber-band the page with a touch drag; block touch scrolling outside the menu panel.
+    const onTouchMove = (e: TouchEvent) => {
+      if (panel && e.target instanceof Node && panel.contains(e.target) && panel.scrollHeight > panel.clientHeight) return;
+      e.preventDefault();
+    };
+    document.addEventListener("touchmove", onTouchMove, { passive: false });
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -72,7 +85,11 @@ export function SiteHeader() {
     document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
+      document.removeEventListener("touchmove", onTouchMove);
+      root.style.overflow = prev.overflow;
+      root.style.overscrollBehavior = prev.overscroll;
+      root.style.scrollbarGutter = prev.gutter;
+      if (window.scrollY !== scrollY) window.scrollTo(0, scrollY);
     };
   }, [open, close]);
 
@@ -137,7 +154,7 @@ export function SiteHeader() {
         id="mobile-menu"
         ref={panelRef}
         hidden={!open}
-        className="fixed-lock fixed inset-x-0 bottom-0 top-[var(--header-h)] z-40 overflow-y-auto bg-ink-950/97 backdrop-blur-xl lg:hidden"
+        className="fixed-lock fixed inset-x-0 bottom-0 top-[var(--header-h)] z-40 overflow-y-auto overscroll-contain bg-ink-950/97 backdrop-blur-xl lg:hidden"
       >
         <nav aria-label="Mobile" className="wrap py-6">
           <ul className="flex flex-col gap-1">
