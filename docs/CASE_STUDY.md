@@ -43,4 +43,5 @@ Lighthouse scores, real-device testing and a live deployment (not deployed yet).
 ## Screenshots
 `docs/portfolio/` (1440 and 390 px): home hero, movies browse, movie details, series details, watch with controls,
 search, trending, my list. Captured by `scripts/screenshots-phase7.mjs` from a production build.
-The watch screenshot uses a mocked short clip, so its frame is not the film's own.
+Portfolio screenshots were refreshed on 2026-11-13 from the live site (https://vizam-06-streaming.vercel.app); the
+watch screenshot plays the real Elephants Dream stream (3:57 of 10:58).

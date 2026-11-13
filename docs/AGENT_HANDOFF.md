@@ -131,7 +131,11 @@ placeholders.
 
 ## Done (Phase 7: delivery, 2026-11-12)
 - README.md, docs/DEPLOYMENT.md, docs/CASE_STUDY.md. Portfolio screenshots (1440 and 390, 8 screens each) in docs/portfolio/; review-gate screenshots (home and Sintel details at 240/390/768/1440) in docs/screenshots/review-gate/. Script: scripts/screenshots-phase7.mjs (needs a production server, E2E_PORT).
-- Seen in screenshots, minor: at 390 px the home hero meta row wraps ("Animation Fantasy Adventure" on a second line); the watch screenshot uses the mocked short clip.
+- Seen in screenshots, minor: at 390 px the home hero meta row wraps ("Animation Fantasy Adventure" on a second line); the watch portfolio screenshot now plays the real stream (refreshed 2026-11-13 from the live site with
+  `BASE_URL=https://vizam-06-streaming.vercel.app REAL_VIDEO=1 node scripts/screenshots-phase7.mjs`, which also writes
+  `docs/portfolio/short-and-sweet-{1440,390}.webp`).
+- Live: https://vizam-06-streaming.vercel.app (Vercel project vizam-06-streaming, git-connected; merges to main deploy
+  to production). Repo: https://github.com/SteevenOrell/vizam-06-streaming (public).
 - Not deployed, nothing pushed. Retro (vizam-project-retro) not yet run.
 
 ## Next steps

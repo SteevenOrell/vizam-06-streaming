@@ -1,5 +1,8 @@
 // Phase 7: portfolio screenshots (docs/portfolio) and UI/UX review-gate screenshots (docs/screenshots/review-gate).
-// Needs a production server on E2E_PORT (default 3061). Usage: node scripts/screenshots-phase7.mjs
+// Needs a production server on E2E_PORT (default 3061), or BASE_URL for a deployed site.
+// Usage: node scripts/screenshots-phase7.mjs
+//        BASE_URL=https://vizam-06-streaming.vercel.app REAL_VIDEO=1 node scripts/screenshots-phase7.mjs
+// REAL_VIDEO=1 plays the real Wikimedia stream on the watch page (true duration) instead of a local stand-in clip.
 import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { chromium } from "@playwright/test";
@@ -7,12 +10,14 @@ import sharp from "sharp";
 
 const portfolioDir = "docs/portfolio";
 const gateDir = "docs/screenshots/review-gate";
-const base = `http://localhost:${process.env.E2E_PORT || 3061}`;
+const base = process.env.BASE_URL || `http://localhost:${process.env.E2E_PORT || 3061}`;
+const realVideo = process.env.REAL_VIDEO === "1";
 const clip = readFileSync(join("public", "media", "hero", "elephants-dream-hero.webm"));
 mkdirSync(portfolioDir, { recursive: true });
 mkdirSync(gateDir, { recursive: true });
 
 async function mock(page) {
+  if (realVideo) return;
   await page.route("https://upload.wikimedia.org/**", async (route) => {
     const h = { "content-type": "video/webm", "accept-ranges": "bytes", "access-control-allow-origin": "*" };
     const m = /bytes=(\d+)-(\d*)/.exec(route.request().headers()["range"] ?? "");
@@ -42,6 +47,14 @@ for (const width of [1440, 390]) {
   const p = (name, o) => save(page, portfolioDir, `${name}-${width}`, o);
   await go(page, "/", 3200);
   await p("home-hero");
+  const shortList = page.locator('section[aria-labelledby="list-short-and-sweet"]');
+  await shortList.scrollIntoViewIfNeeded();
+  await page.waitForTimeout(1200);
+  // Hide the sticky header for the section shot, or it covers the section's top on phones.
+  await page.evaluate(() => { document.querySelector("header").style.visibility = "hidden"; });
+  await sharp(await shortList.screenshot()).webp({ quality: 80 }).toFile(join(portfolioDir, `short-and-sweet-${width}.webp`));
+  await page.evaluate(() => { document.querySelector("header").style.visibility = ""; });
+  console.log("wrote", portfolioDir, `short-and-sweet-${width}`);
   await go(page, "/movies");
   await p("movies-browse");
   await go(page, "/movies/sintel");
@@ -50,7 +63,13 @@ for (const width of [1440, 390]) {
   await p("series-details");
   await go(page, "/watch/elephants-dream", 800);
   await page.getByTestId("big-play").click();
-  await page.waitForFunction(() => { const v = document.querySelector("video"); return v && !v.paused && v.currentTime > 0.5; }, null, { timeout: 20000 });
+  await page.waitForFunction(() => { const v = document.querySelector("video"); return v && !v.paused && v.currentTime > 0.5; }, null, { timeout: realVideo ? 60000 : 20000 });
+  if (realVideo) {
+    // Land on a cinematic moment rather than the opening titles: 3:56, both characters in frame (the hero loop's cut).
+    await page.evaluate(() => { const v = document.querySelector("video"); v.currentTime = Math.min(236, v.duration - 5); });
+    await page.waitForFunction(() => { const v = document.querySelector("video"); return v && v.readyState >= 3; }, null, { timeout: 60000 });
+    await page.waitForTimeout(1500);
+  }
   await page.getByTestId("player").focus();
   await page.keyboard.press("k");
   await page.getByTestId("player").hover();
