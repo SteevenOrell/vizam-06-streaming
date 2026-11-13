@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-12T10:19:24.761Z",
+  "results": [
+    {
+      "step": "lint",
+      "status": "PASS",
+      "detail": "npm run lint"
+    },
+    {
+      "step": "typecheck",
+      "status": "PASS",
+      "detail": "npm run typecheck"
+    },
+    {
+      "step": "unit",
+      "status": "PASS",
+      "detail": "npm run test"
+    },
+    {
+      "step": "build",
+      "status": "PASS",
+      "detail": "npm run build"
+    },
+    {
+      "step": "e2e",
+      "status": "PASS",
+      "detail": "npm run e2e"
+    },
+    {
+      "step": "npm audit (production deps)",
+      "status": "PASS",
+      "detail": "prod: 0 (high/critical 0); all deps: 0"
+    },
+    {
+      "step": "tracked private files (.env, .claude, CLAUDE.md, keys)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "secret scan (working tree)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "secret scan (full git history)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "layout: no horizontal scroll from 300 px up (14 routes)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "layout: below 250 px locked at 500 px, html pans",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "browser: console errors, failed requests, bad status",
+      "status": "FAIL",
+      "detail": "/no-such-page @240px: HTTP 404 /no-such-page | console: Failed to load resource: the server responded with a status of 404 (Not Found) | page status 404\n/no-such-page @300px: HTTP 404 /no-such-page | console: Failed to load resource: the server responded with a status of 404 (Not Found) | page status 404\n/no-such-page @390px: HTTP 404 /no-such-page | console: Failed to load resource: the server responded with a status of 404 (Not Found) | page status 404\n/no-such-page @768px: HTTP 404 /no-such-page | console: Failed to load resource: the server responded with a status of 404 (Not Found) | page status 404\n/no-such-page @1440px: HTTP 404 /no-such-page | console: Failed to load resource: the server responded with a status of 404 (Not Found) | page status 404"
+    },
+    {
+      "step": "images: none broken",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "step": "cards: equal height within a row",
+      "status": "WARN",
+      "detail": "/watch/sintel @768px: div.relative heights 156/166\n/watch/caminandes?s=1&e=1 @768px: div.relative heights 156/166"
+    },
+    {
+      "step": "internal links (47 checked)",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

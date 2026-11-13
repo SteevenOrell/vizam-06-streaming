@@ -14,17 +14,17 @@ Approved decisions:
 
 ## Phases
 
-- [ ] 0. Setup and architecture (Opus): Next.js scaffold, tokens, brand, sitemap, Zod content schema, layout shell,
-      nav, footer, 250 px lock, test tooling, `docs/ARCHITECTURE.md`, `docs/design-direction.md`
-- [ ] 1. Media library (Sonnet, runs in parallel with 0): curated titles, posters/stills, hero loops, licences,
-      `content/media-library.json`
-- [ ] 2. Home, Movies, TV Shows (Sonnet)
+- [x] 0. Setup and architecture (Opus): Next.js scaffold, tokens, brand, sitemap, Zod content schema, layout shell,
+      nav, footer, 250 px lock, test tooling, `docs/ARCHITECTURE.md`, `docs/design-direction.md` (done 2026-11-11)
+- [x] 1. Media library (Sonnet, runs in parallel with 0): curated titles, posters/stills, hero loops, licences,
+      `content/media-library.json` (done 2026-11-11: 16 movies, 4 series, 5 hero loops, 7 previews, 25 MB)
+- [x] 2. Home, Movies, TV Shows (Sonnet) (done 2026-11-11)
 - [ ] Checkpoint: homepage screenshots at 390 and 1440 px for Steeven
-- [ ] 3. Movie details, TV show details, Watch / player (Sonnet)
-- [ ] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)
-- [ ] 5. Motion and polish (Sonnet)
-- [ ] 6. QA and security: Vitest, Playwright + axe, quality gate, content QA, audit, security review (Opus)
-- [ ] 7. Delivery: README, deployment instructions, portfolio screenshots, handoff, retro (Sonnet + main)
+- [x] 3. Movie details, TV show details, Watch / player (Sonnet)
+- [x] 4. Genres, Trending, Search, My List, About; TMDB feed if a key is present (Sonnet)
+- [x] 5. Motion and polish (Sonnet)
+- [x] 6. QA and security: Vitest, Playwright + axe, quality gate, content QA, audit, security review (Opus) (done 2026-11-12; docs/TEST_RESULTS.md, docs/SECURITY_REVIEW.md)
+- [x] 7. Delivery: README, deployment instructions, portfolio screenshots, handoff, retro (Sonnet + main)
 - [ ] UI/UX review gate: screenshots at 240/390/768/1440 px to Steeven before any push
 
 ## Blocked / open

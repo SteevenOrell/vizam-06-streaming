@@ -1,0 +1,29 @@
+import { metaDescription } from "@/lib/format";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { TitleDetails } from "@/components/title/title-details";
+import { getTitleBySlug, getTitles } from "@/lib/content/catalog";
+
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getTitles({ type: "series" }).map((t) => ({ slug: t.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps<"/tv/[slug]">): Promise<Metadata> {
+  const { slug } = await params;
+  const title = getTitleBySlug(slug);
+  if (!title || title.type !== "series") return {};
+  return {
+    title: `${title.title} (${title.year})`,
+    description: metaDescription(title),
+    openGraph: { images: [{ url: title.images.backdrop }] },
+  };
+}
+
+export default async function TvShowDetailsPage({ params }: PageProps<"/tv/[slug]">) {
+  const { slug } = await params;
+  const title = getTitleBySlug(slug);
+  if (!title || title.type !== "series") notFound();
+  return <TitleDetails title={title} />;
+}

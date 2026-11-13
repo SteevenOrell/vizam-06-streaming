@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "sample-ember-line",
+      "slug": "ember-line",
+      "type": "movie",
+      "title": "Ember Line",
+      "year": 2024,
+      "runtimeMinutes": 12,
+      "genres": [
+        "Drama",
+        "Sci-Fi"
+      ],
+      "synopsis": "Placeholder synopsis. A night-shift signal keeper follows a trail of warm light across an empty city.",
+      "tagline": "Placeholder title for development.",
+      "rating": {
+        "source": "none"
+      },
+      "credits": {
+        "directors": [
+          "Sample Director"
+        ],
+        "cast": [
+          {
+            "name": "Sample Actor One",
+            "role": "The Keeper"
+          },
+          "Sample Actor Two"
+        ],
+        "writers": [
+          "Sample Writer"
+        ]
+      },
+      "licence": {
+        "id": "placeholder",
+        "name": "CC0 1.0 (placeholder artwork)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "Placeholder artwork made by VIZAM for development. Not a real film.",
+        "sourceUrl": "https://example.com/afterlight/placeholders",
+        "author": "VIZAM"
+      },
+      "images": {
+        "poster": "/placeholders/ember-line-poster.svg",
+        "backdrop": "/placeholders/ember-line-backdrop.svg"
+      },
+      "videos": []
+    },
+    {
+      "id": "sample-the-quiet-hours",
+      "slug": "the-quiet-hours",
+      "type": "series",
+      "title": "The Quiet Hours",
+      "year": 2023,
+      "genres": [
+        "Mystery",
+        "Drama"
+      ],
+      "synopsis": "Placeholder synopsis. A lighthouse radio picks up voices that should not be there.",
+      "rating": {
+        "source": "editorial",
+        "score": 7.5,
+        "label": "AFTERLIGHT pick"
+      },
+      "credits": {
+        "directors": [
+          "Sample Director"
+        ],
+        "cast": [
+          "Sample Actor Three"
+        ],
+        "writers": []
+      },
+      "licence": {
+        "id": "placeholder",
+        "name": "CC0 1.0 (placeholder artwork)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "Placeholder artwork made by VIZAM for development. Not a real series.",
+        "sourceUrl": "https://example.com/afterlight/placeholders",
+        "author": "VIZAM"
+      },
+      "images": {
+        "poster": "/placeholders/the-quiet-hours-poster.svg",
+        "backdrop": "/placeholders/the-quiet-hours-backdrop.svg"
+      },
+      "videos": [],
+      "seasons": [
+        {
+          "number": 1,
+          "title": "Signal",
+          "episodes": [
+            {
+              "number": 1,
+              "title": "Static",
+              "synopsis": "Placeholder episode for development.",
+              "runtimeMinutes": 21,
+              "videos": [
+                {
+                  "kind": "episode",
+                  "src": [
+                    {
+                      "url": "/media/hero/elephants-dream-hero.webm",
+                      "type": "video/webm; codecs=\"vp9\""
+                    }
+                  ],
+                  "captions": [
+                    {
+                      "src": "/media/captions/elephants-dream.en.vtt",
+                      "lang": "en",
+                      "label": "English"
+                    }
+                  ],
+                  "host": "local",
+                  "durationSeconds": 14
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "title": "Low Tide",
+              "synopsis": "Placeholder episode for development.",
+              "runtimeMinutes": 22,
+              "videos": [
+                {
+                  "kind": "episode",
+                  "src": [
+                    {
+                      "url": "/media/hero/elephants-dream-hero.webm",
+                      "type": "video/webm; codecs=\"vp9\""
+                    }
+                  ],
+                  "captions": [
+                    {
+                      "src": "/media/captions/elephants-dream.en.vtt",
+                      "lang": "en",
+                      "label": "English"
+                    }
+                  ],
+                  "host": "local",
+                  "durationSeconds": 14
+                }
+              ]
+            },
+            {
+              "number": 3,
+              "title": "Foghorn",
+              "synopsis": "Placeholder episode for development.",
+              "runtimeMinutes": 23
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "episodes": [
+            {
+              "number": 1,
+              "title": "Return Signal",
+              "synopsis": "Placeholder episode for development.",
+              "runtimeMinutes": 21,
+              "videos": [
+                {
+                  "kind": "episode",
+                  "src": [
+                    {
+                      "url": "/media/hero/elephants-dream-hero.webm",
+                      "type": "video/webm; codecs=\"vp9\""
+                    }
+                  ],
+                  "captions": [
+                    {
+                      "src": "/media/captions/elephants-dream.en.vtt",
+                      "lang": "en",
+                      "label": "English"
+                    }
+                  ],
+                  "host": "local",
+                  "durationSeconds": 14
+                }
+              ]
+            },
+            {
+              "number": 2,
+              "title": "Lamp Room",
+              "synopsis": "Placeholder episode for development.",
+              "runtimeMinutes": 22,
+              "videos": [
+                {
+                  "kind": "episode",
+                  "src": [
+                    {
+                      "url": "/media/hero/elephants-dream-hero.webm",
+                      "type": "video/webm; codecs=\"vp9\""
+                    }
+                  ],
+                  "captions": [
+                    {
+                      "src": "/media/captions/elephants-dream.en.vtt",
+                      "lang": "en",
+                      "label": "English"
+                    }
+                  ],
+                  "host": "local",
+                  "durationSeconds": 14
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample-saltglass",
+      "slug": "saltglass",
+      "type": "movie",
+      "title": "Saltglass",
+      "year": 2021,
+      "runtimeMinutes": 9,
+      "genres": [
+        "Animation",
+        "Adventure"
+      ],
+      "synopsis": "Placeholder synopsis. Two glassblowers race a rising tide to finish one last lantern.",
+      "rating": {
+        "source": "none"
+      },
+      "credits": {
+        "directors": [
+          "Sample Director Two"
+        ],
+        "cast": [],
+        "writers": []
+      },
+      "licence": {
+        "id": "placeholder",
+        "name": "CC0 1.0 (placeholder artwork)",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "attribution": "Placeholder artwork made by VIZAM for development. Not a real film.",
+        "sourceUrl": "https://example.com/afterlight/placeholders",
+        "author": "VIZAM"
+      },
+      "images": {
+        "poster": "/placeholders/saltglass-poster.svg",
+        "backdrop": "/placeholders/saltglass-backdrop.svg"
+      },
+      "videos": []
+    }
+  ]
+}
